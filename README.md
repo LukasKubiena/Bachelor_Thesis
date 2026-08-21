@@ -1,4 +1,4 @@
-# Topic or Proficiency? Topic Associations in CEFR-Labelled Corpora
+# Topic and Proficiency: Measuring Topic-Level Associations in CEFR-Labelled Corpora
 
 Bachelor thesis, Cognitive Science, Aarhus University.
 Lukas Maria Kubiena, supervised by Ross Deans Kristensen-McLachlan.
