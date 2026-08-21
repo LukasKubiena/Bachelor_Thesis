@@ -1,0 +1,2546 @@
+cv,features,y_true,y_pred
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),A2,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B1,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),B2,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C1,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),C2,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),majority class (floor),A1,B2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,A1,B2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,A1,B2
+grouped (cv_group),word count only,A1,C2
+grouped (cv_group),word count only,A1,C2
+grouped (cv_group),word count only,A1,C2
+grouped (cv_group),word count only,A1,B2
+grouped (cv_group),word count only,A1,C2
+grouped (cv_group),word count only,A1,C2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,A2,B2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,A2,C2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,A1,B2
+grouped (cv_group),word count only,A1,C2
+grouped (cv_group),word count only,A1,B2
+grouped (cv_group),word count only,A1,C2
+grouped (cv_group),word count only,A1,B2
+grouped (cv_group),word count only,A1,B2
+grouped (cv_group),word count only,A1,B2
+grouped (cv_group),word count only,A1,C2
+grouped (cv_group),word count only,A1,C2
+grouped (cv_group),word count only,A1,C2
+grouped (cv_group),word count only,A1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,B2
+grouped (cv_group),word count only,B1,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,A1,B2
+grouped (cv_group),word count only,A1,A1
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,B2,C2
+grouped (cv_group),word count only,B2,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,C2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C1,B2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,B2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,C2,C2
+grouped (cv_group),word count only,A1,C2
+grouped (cv_group),word count only,A1,C2
+grouped (cv_group),word count only,A1,C2
+grouped (cv_group),word count only,A1,C2
+grouped (cv_group),word count only,A1,B2
+grouped (cv_group),word count only,A1,B2
+grouped (cv_group),word count only,A1,B2
+grouped (cv_group),word count only,A1,B2
+grouped (cv_group),word count only,A1,C2
+grouped (cv_group),word count only,A1,B2
+grouped (cv_group),surface features,B1,B1
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,C1
+grouped (cv_group),surface features,B2,C1
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,C1
+grouped (cv_group),surface features,B2,C1
+grouped (cv_group),surface features,B2,C1
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,A1,A2
+grouped (cv_group),surface features,A2,B1
+grouped (cv_group),surface features,B1,C1
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,B1,B1
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,B1
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A1
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,B1
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,B1
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,B1
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,C2
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,B1,C2
+grouped (cv_group),surface features,B1,B1
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,B2,C1
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,C1
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,B1,B1
+grouped (cv_group),surface features,B1,B1
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,B1
+grouped (cv_group),surface features,B1,B1
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,B1,C2
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,B1,B1
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,B1,B1
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,B1
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,B1,C2
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A1
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A1
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A1
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A1
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,B1
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,B1
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,B1
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,B1
+grouped (cv_group),surface features,A2,B1
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,B1
+grouped (cv_group),surface features,A2,B2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,B1
+grouped (cv_group),surface features,A2,B2
+grouped (cv_group),surface features,A2,B1
+grouped (cv_group),surface features,A2,B1
+grouped (cv_group),surface features,A2,B1
+grouped (cv_group),surface features,A2,B1
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,B1
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,B2
+grouped (cv_group),surface features,A2,B2
+grouped (cv_group),surface features,A2,B1
+grouped (cv_group),surface features,A2,B2
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,B1,B1
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,B1,C2
+grouped (cv_group),surface features,B1,C2
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,A1,B1
+grouped (cv_group),surface features,A1,A2
+grouped (cv_group),surface features,A1,A1
+grouped (cv_group),surface features,A1,A2
+grouped (cv_group),surface features,A1,A1
+grouped (cv_group),surface features,A1,A2
+grouped (cv_group),surface features,A1,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,B1
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,A2
+grouped (cv_group),surface features,A2,B1
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,B1
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B1
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B1
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B1
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B1
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,A1
+grouped (cv_group),surface features,B2,B1
+grouped (cv_group),surface features,A1,A1
+grouped (cv_group),surface features,A1,A1
+grouped (cv_group),surface features,A1,A2
+grouped (cv_group),surface features,A1,A1
+grouped (cv_group),surface features,A1,A1
+grouped (cv_group),surface features,A1,A2
+grouped (cv_group),surface features,A1,A2
+grouped (cv_group),surface features,A1,A1
+grouped (cv_group),surface features,A1,A1
+grouped (cv_group),surface features,A1,A2
+grouped (cv_group),surface features,A1,A1
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,B1,A2
+grouped (cv_group),surface features,B1,B2
+grouped (cv_group),surface features,B1,B1
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,B1
+grouped (cv_group),surface features,B2,B1
+grouped (cv_group),surface features,B2,C1
+grouped (cv_group),surface features,B2,B1
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B1
+grouped (cv_group),surface features,B2,C1
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,C1
+grouped (cv_group),surface features,B2,C1
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B1
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B1
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,C1
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B1
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,A2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,B1
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,C1
+grouped (cv_group),surface features,B2,B1
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,C1
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,C1
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,C1
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,B1
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,A1,A1
+grouped (cv_group),surface features,A1,A1
+grouped (cv_group),surface features,B2,A2
+grouped (cv_group),surface features,B2,C1
+grouped (cv_group),surface features,B2,C1
+grouped (cv_group),surface features,B2,B2
+grouped (cv_group),surface features,B2,B1
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,B2,C2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,C2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C1,C1
+grouped (cv_group),surface features,C1,B2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C1
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C1
+grouped (cv_group),surface features,C2,C1
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C1
+grouped (cv_group),surface features,C2,C1
+grouped (cv_group),surface features,C2,C1
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,B1
+grouped (cv_group),surface features,C2,C1
+grouped (cv_group),surface features,C2,B1
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C1
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C1
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C1
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,C1
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,B1
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,B1
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,C1
+grouped (cv_group),surface features,C2,C1
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,C1
+grouped (cv_group),surface features,C2,B2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,C2,C2
+grouped (cv_group),surface features,A1,A2
+grouped (cv_group),surface features,A1,A2
+grouped (cv_group),surface features,A1,A1
+grouped (cv_group),surface features,A1,A1
+grouped (cv_group),surface features,A1,A1
+grouped (cv_group),surface features,A1,A2
+grouped (cv_group),surface features,A1,A1
+grouped (cv_group),surface features,A1,B2
+grouped (cv_group),surface features,A1,A2
+grouped (cv_group),surface features,A1,A1
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,C1
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B2,B1
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,B1
+grouped (cv_group),topic only,B2,A2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,A1,A2
+grouped (cv_group),topic only,A2,B2
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,B1
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,C2
+grouped (cv_group),topic only,B1,B1
+grouped (cv_group),topic only,B1,B1
+grouped (cv_group),topic only,B1,C2
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,C2
+grouped (cv_group),topic only,B1,C1
+grouped (cv_group),topic only,B1,A1
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,B1
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,B1
+grouped (cv_group),topic only,B1,B1
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,A1
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,A1
+grouped (cv_group),topic only,B1,B1
+grouped (cv_group),topic only,B1,C2
+grouped (cv_group),topic only,B1,B1
+grouped (cv_group),topic only,B1,B1
+grouped (cv_group),topic only,B1,C2
+grouped (cv_group),topic only,B1,B1
+grouped (cv_group),topic only,B1,B1
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,B1
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,C2
+grouped (cv_group),topic only,B1,B1
+grouped (cv_group),topic only,B2,C2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,C2
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,C2
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,B1,B1
+grouped (cv_group),topic only,B1,B1
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,B1
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,C1
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,B1
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,A1
+grouped (cv_group),topic only,B1,A1
+grouped (cv_group),topic only,B1,B1
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,C2
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,C1
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,B1
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,C1
+grouped (cv_group),topic only,A2,B1
+grouped (cv_group),topic only,A2,B2
+grouped (cv_group),topic only,A2,B1
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,C2
+grouped (cv_group),topic only,A2,B1
+grouped (cv_group),topic only,A2,B1
+grouped (cv_group),topic only,A2,C1
+grouped (cv_group),topic only,A2,C1
+grouped (cv_group),topic only,A2,B1
+grouped (cv_group),topic only,A2,B1
+grouped (cv_group),topic only,A2,B1
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,C2
+grouped (cv_group),topic only,A2,B1
+grouped (cv_group),topic only,A2,B1
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,C2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,C1
+grouped (cv_group),topic only,A2,B2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,C2
+grouped (cv_group),topic only,A2,B1
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,B2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,A1
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,C2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,B2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,A1
+grouped (cv_group),topic only,A2,B1
+grouped (cv_group),topic only,A2,B1
+grouped (cv_group),topic only,A2,B2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,B2
+grouped (cv_group),topic only,A2,B1
+grouped (cv_group),topic only,A2,B2
+grouped (cv_group),topic only,A2,C2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,C2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,B2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,B2
+grouped (cv_group),topic only,A2,C1
+grouped (cv_group),topic only,A2,B2
+grouped (cv_group),topic only,A2,A1
+grouped (cv_group),topic only,A2,B2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,B1
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,C1
+grouped (cv_group),topic only,A2,C1
+grouped (cv_group),topic only,A2,B2
+grouped (cv_group),topic only,A2,B1
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,A1
+grouped (cv_group),topic only,A2,B2
+grouped (cv_group),topic only,A2,C1
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,C2
+grouped (cv_group),topic only,B1,C1
+grouped (cv_group),topic only,B1,C2
+grouped (cv_group),topic only,B1,A1
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,A1,A2
+grouped (cv_group),topic only,A1,A2
+grouped (cv_group),topic only,A1,A1
+grouped (cv_group),topic only,A1,A1
+grouped (cv_group),topic only,A1,B1
+grouped (cv_group),topic only,A1,A2
+grouped (cv_group),topic only,A1,A2
+grouped (cv_group),topic only,A2,A1
+grouped (cv_group),topic only,A2,A1
+grouped (cv_group),topic only,A2,A1
+grouped (cv_group),topic only,A2,B1
+grouped (cv_group),topic only,A2,C2
+grouped (cv_group),topic only,A2,C2
+grouped (cv_group),topic only,A2,A2
+grouped (cv_group),topic only,A2,C1
+grouped (cv_group),topic only,B1,B2
+grouped (cv_group),topic only,B1,C2
+grouped (cv_group),topic only,B2,B1
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,A2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,A2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,A2
+grouped (cv_group),topic only,A1,A2
+grouped (cv_group),topic only,A1,A2
+grouped (cv_group),topic only,A1,C1
+grouped (cv_group),topic only,A1,A2
+grouped (cv_group),topic only,A1,A2
+grouped (cv_group),topic only,A1,B2
+grouped (cv_group),topic only,A1,A2
+grouped (cv_group),topic only,A1,A1
+grouped (cv_group),topic only,A1,A1
+grouped (cv_group),topic only,A1,A2
+grouped (cv_group),topic only,A1,A2
+grouped (cv_group),topic only,B1,A1
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,C2
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B1,A2
+grouped (cv_group),topic only,B2,C2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,A2
+grouped (cv_group),topic only,B2,B1
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B1
+grouped (cv_group),topic only,B2,A2
+grouped (cv_group),topic only,B2,B1
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,B1
+grouped (cv_group),topic only,B2,B1
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,A2
+grouped (cv_group),topic only,B2,B1
+grouped (cv_group),topic only,B2,A1
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,C2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,C2
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,B1
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,C2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,C2
+grouped (cv_group),topic only,B2,A2
+grouped (cv_group),topic only,B2,A2
+grouped (cv_group),topic only,B2,C2
+grouped (cv_group),topic only,B2,B1
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,C2
+grouped (cv_group),topic only,B2,A2
+grouped (cv_group),topic only,B2,A2
+grouped (cv_group),topic only,B2,C2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B1
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,A2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,C2
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,A2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,A1
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,C2
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,A2
+grouped (cv_group),topic only,B2,C2
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,C2
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,A1,A1
+grouped (cv_group),topic only,A1,A1
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,A2
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,B2,C1
+grouped (cv_group),topic only,B2,B2
+grouped (cv_group),topic only,C1,A2
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,C1,B1
+grouped (cv_group),topic only,C1,B1
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,A2
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,B1
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,A2
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,B1
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,B1
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,A2
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,A2
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C1,A2
+grouped (cv_group),topic only,C1,C2
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,C1
+grouped (cv_group),topic only,C1,B2
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,B1
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,A2
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,B1
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,A2
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,A2
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,B1
+grouped (cv_group),topic only,C2,A2
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,A2
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,B1
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,B1
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,A2
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,B1
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,B1
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,B1
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,B1
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,A2
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,B1
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,A1
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,A1
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,A2
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,C2
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,A2
+grouped (cv_group),topic only,C2,A2
+grouped (cv_group),topic only,C2,B2
+grouped (cv_group),topic only,C2,C1
+grouped (cv_group),topic only,A1,B2
+grouped (cv_group),topic only,A1,A2
+grouped (cv_group),topic only,A1,A2
+grouped (cv_group),topic only,A1,A2
+grouped (cv_group),topic only,A1,A2
+grouped (cv_group),topic only,A1,A2
+grouped (cv_group),topic only,A1,C2
+grouped (cv_group),topic only,A1,A2
+grouped (cv_group),topic only,A1,A2
+grouped (cv_group),topic only,A1,A1
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,C1
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,B1
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,A1,A2
+grouped (cv_group),surface + topic,A2,B2
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,A1
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,A1
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,A1
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,A1
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B1,C2
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B1,C2
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B1,C2
+grouped (cv_group),surface + topic,B1,C1
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A1
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,B2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,B2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,C2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,A1
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,B2
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,C1
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,B1
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,C1
+grouped (cv_group),surface + topic,A2,B2
+grouped (cv_group),surface + topic,A2,B2
+grouped (cv_group),surface + topic,A2,B2
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,B1
+grouped (cv_group),surface + topic,B1,C1
+grouped (cv_group),surface + topic,B1,C2
+grouped (cv_group),surface + topic,B1,C2
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,A1,A2
+grouped (cv_group),surface + topic,A1,A1
+grouped (cv_group),surface + topic,A1,A1
+grouped (cv_group),surface + topic,A1,A1
+grouped (cv_group),surface + topic,A1,A1
+grouped (cv_group),surface + topic,A1,A1
+grouped (cv_group),surface + topic,A1,A2
+grouped (cv_group),surface + topic,A2,A1
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A1
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,C1
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,A2
+grouped (cv_group),surface + topic,A2,C1
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B1
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B1
+grouped (cv_group),surface + topic,B2,B1
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B1
+grouped (cv_group),surface + topic,B2,B1
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B1
+grouped (cv_group),surface + topic,B2,A2
+grouped (cv_group),surface + topic,A1,A1
+grouped (cv_group),surface + topic,A1,A1
+grouped (cv_group),surface + topic,A1,A2
+grouped (cv_group),surface + topic,A1,A1
+grouped (cv_group),surface + topic,A1,A2
+grouped (cv_group),surface + topic,A1,A2
+grouped (cv_group),surface + topic,A1,A2
+grouped (cv_group),surface + topic,A1,A1
+grouped (cv_group),surface + topic,A1,A1
+grouped (cv_group),surface + topic,A1,A1
+grouped (cv_group),surface + topic,A1,A1
+grouped (cv_group),surface + topic,B1,C2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B1,B2
+grouped (cv_group),surface + topic,B1,A2
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,B2,B1
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,B2,B1
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B1
+grouped (cv_group),surface + topic,B2,B1
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B1
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,A2
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,A2
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,B1
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,A2
+grouped (cv_group),surface + topic,B2,B1
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,A2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B1
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,B2,A2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,A2
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,A1,A1
+grouped (cv_group),surface + topic,A1,A1
+grouped (cv_group),surface + topic,B2,A2
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,B2
+grouped (cv_group),surface + topic,B2,C1
+grouped (cv_group),surface + topic,B2,C2
+grouped (cv_group),surface + topic,C1,B1
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,B1
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,A2
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,B1
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,B1
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,C1,C2
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,C1
+grouped (cv_group),surface + topic,C1,B2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,C1
+grouped (cv_group),surface + topic,C2,B1
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C1
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C1
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C1
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,C1
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C1
+grouped (cv_group),surface + topic,C2,C1
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,B1
+grouped (cv_group),surface + topic,C2,C1
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C1
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C1
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,C1
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,C1
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,A2
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C1
+grouped (cv_group),surface + topic,C2,C1
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,A2
+grouped (cv_group),surface + topic,C2,C1
+grouped (cv_group),surface + topic,C2,C1
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,C2
+grouped (cv_group),surface + topic,C2,B2
+grouped (cv_group),surface + topic,A1,B2
+grouped (cv_group),surface + topic,A1,A2
+grouped (cv_group),surface + topic,A1,A1
+grouped (cv_group),surface + topic,A1,A1
+grouped (cv_group),surface + topic,A1,A1
+grouped (cv_group),surface + topic,A1,A2
+grouped (cv_group),surface + topic,A1,A1
+grouped (cv_group),surface + topic,A1,A1
+grouped (cv_group),surface + topic,A1,A2
+grouped (cv_group),surface + topic,A1,A1

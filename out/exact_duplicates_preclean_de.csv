@@ -1,0 +1,5 @@
+text_sha256,n_rows,n_corpora,n_levels,datasets,levels,action
+ae94ff8896083f68d9d9958d86692f45e65c13ca32c401c1218e5809dafbdbc4,2,1,1,apa_lha,A2,keep_first_redundant_copy
+49dc4317a4cf78949b70b525f9b59d19a53799325cc8fd0b664a7d62f96def9e,2,1,1,apa_lha,A2,keep_first_redundant_copy
+175373cf5fe9096e275c70372f22c19577e3bb3057b4a6eef897502821befd58,2,1,2,apa_lha,A2|B1,exclude_all_conflicting_rows
+0ceb75e308b869983c3ff609481da806423cd008fb5ce096c6dc869ef0735f06,2,1,2,apa_lha,A2|B1,exclude_all_conflicting_rows

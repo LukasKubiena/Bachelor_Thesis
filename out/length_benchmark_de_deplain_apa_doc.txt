@@ -1,0 +1,13 @@
+LENGTH VS TOPIC BENCHMARK (de_deplain_apa_doc), n=966
+Grouped 5-fold CV on cv_group; topic features are transductive.
+majority class (floor): weighted_f1=0.3333, macro_f1=0.3333, qwk=0.0000
+word count only: weighted_f1=0.5578, macro_f1=0.5578, qwk=0.1263
+surface features: weighted_f1=0.8375, macro_f1=0.8375, qwk=0.6749
+topic only: weighted_f1=0.5709, macro_f1=0.5709, qwk=0.1429
+surface + topic: weighted_f1=0.8271, macro_f1=0.8271, qwk=0.6542
+Repeated-CV topic increment over surface features:
+weighted_f1: mean=-0.0104, range=[-0.0104, -0.0104]
+macro_f1: mean=-0.0104, range=[-0.0104, -0.0104]
+qwk: mean=-0.0207, range=[-0.0207, -0.0207]
+Interpret metrics separately; a zero-crossing range does not support improvement.
+These comparisons are predictive diagnostics, not a causal decomposition.

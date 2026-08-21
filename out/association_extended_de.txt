@@ -1,0 +1,113 @@
+==============================================================================
+EXTENDED ASSOCIATION ANALYSIS (de), n = 5,805 documents
+bootstrap diagnostic draws = 2,000, permutations = 5,000
+==============================================================================
+
+--- 1. Topic vs CEFR level, all data ---
+Cramer's V (bias-corrected): 0.281 [0.270, 0.293]   bootstrap SD 0.007
+Permutation p: < 2.0e-04  (5,000 permutations)
+Adjusted mutual information: 0.084   (raw NMI 0.087)
+Theil's U (level | topic):   0.144   <- share of level entropy resolved by knowing the topic
+Theil's U (topic | level):   0.062
+Kruskal-Wallis on level rank by topic: H = 825.0, epsilon^2 = 0.140, p = 5.01e-167
+  epsilon^2 is the ordinal-aware complement to V: the share of variance in
+  CEFR rank explained by topic membership, without assuming topics are ordered.
+
+--- 2. Topic vs source corpus (the competing explanation) ---
+Cramer's V: 0.452 [0.437, 0.467]   permutation p < 2.0e-04
+Compare against the level association above. Non-overlap is a descriptive
+contrast, not a formal test of the difference between the two V values.
+CIs overlap: False
+
+--- 3. Topic vs level WITHIN each corpus ---
+Matched-n analyses subsample every corpus to n = 509 (the smallest corpus), 200 repetitions.
+
+merlin_de          n= 1031  V = 0.357 [0.329, 0.384]  perm p < 2.0e-04 (Holm 0.001)
+                           at matched n=509: V = 0.360 +/- 0.019   eps^2 = 0.487
+                           scenario-specific 80% detection point: V = 0.103 (observed V is above this scenario point)
+                           [power sim size check: type I error = 0.050, nominal 0.05; bootstrap bias = +0.008]
+elg_cefr_de        n=  509  V = 0.205 [0.160, 0.249]  perm p < 2.0e-04 (Holm 0.001)
+                           at matched n=509: V = 0.205 +/- 0.000   eps^2 = 0.183
+                           scenario-specific 80% detection point: V = 0.138 (observed V is above this scenario point)
+                           [power sim size check: type I error = 0.050, nominal 0.05; bootstrap bias = +0.043]
+deplain_apa_doc    n=  966  V = 0.060 [0.000, 0.148]  perm p 1.97e-01 (Holm 0.218)
+                           at matched n=509: V = 0.049 +/- 0.047   eps^2 = 0.004
+                           scenario-specific 80% detection point: V = 0.138 (observed V is below this scenario point)
+                           [power sim size check: type I error = 0.050, nominal 0.05; bootstrap bias = +0.052]
+apa_lha            n= 3299  V = 0.045 [0.000, 0.090]  perm p 1.09e-01 (Holm 0.218)
+                           at matched n=509: V = 0.056 +/- 0.059   eps^2 = 0.002
+                           scenario-specific 80% detection point: V = 0.080 (observed V is below this scenario point)
+                           [power sim size check: type I error = 0.050, nominal 0.05; bootstrap bias = +0.032]
+
+Reading the power column: it applies only to the rotating-level tilt family
+implemented in minimum_detectable_v; it is not a universal threshold for
+all contingency tables having the same V.
+CIs use approximate noncentral-chi-square inversion. Bootstrap-normal,
+percentile and basic alternatives remain in the JSON/CSV as diagnostics.
+
+Corpus ranking, raw n:      merlin_de > elg_cefr_de > deplain_apa_doc > apa_lha
+Corpus ranking, matched n:  merlin_de > elg_cefr_de > apa_lha > deplain_apa_doc
+Spearman rho between raw and matched-n V: 0.800
+Grouping at matched n (learner > reference > parallel news): True
+  merlin 0.360 > elg 0.205 > max(news) 0.056
+Note: the smallest corpus is subsampled to its own size, so its matched-n
+SD is 0 by construction. That is expected, not an error.
+
+--- 4. Cochran-Mantel-Haenszel: topic vs level, conditioning on corpus ---
+Null: within corpora, topic carries no information about level.
+  level A1: CMH chi2 =    135.6  df = 14  p = 5.23e-22  (Holm 2.09e-21)  -> REJECTED
+  level A2: CMH chi2 =    168.9  df = 14  p = 1.15e-28  (Holm 5.77e-28)  -> REJECTED
+  level B1: CMH chi2 =     85.8  df = 14  p = 2.37e-12  (Holm 7.11e-12)  -> REJECTED
+  level B2: CMH chi2 =    277.9  df = 14  p = 4.76e-51  (Holm 2.86e-50)  -> REJECTED
+  level C1: CMH chi2 =     74.4  df = 14  p = 3.04e-10  (Holm 6.08e-10)  -> REJECTED
+  level C2: CMH chi2 =     41.9  df = 14  p = 1.30e-04  (Holm 1.30e-04)  -> REJECTED
+
+For rejected levels, topic and level remain associated within the
+corpus strata. This rules out corpus composition as the sole
+explanation, but does not identify a causal topic effect.
+
+--- 5. Standardised residuals (which topics go with which levels) ---
+Cells with |standardised residual| > 3: 44 of 90
+Cells with |standardised residual| > 2: 65
+
+Strongest positive associations (level over-represented in topic):
+  B2  topic 4: deutschland/deutsch/deutsche (Au-pair stay  obs   86 vs exp   15.3  ( 5.6x)  resid +19.1
+  B2  topic 8: kultur/traditionen/heimatlandes (Essays on  obs   85 vs exp   18.8  ( 4.5x)  resid +16.2
+  B2  topic 12: geehrte/praktikum/spezialist (IT internsh  obs   59 vs exp   11.9  ( 5.0x)  resid +14.4
+  C1  topic 8: kultur/traditionen/heimatlandes (Essays on  obs   39 vs exp    6.0  ( 6.5x)  resid +14.0
+  B2  topic 2: stadt/grüßen/freundlichen (Formal letters   obs   96 vs exp   27.8  ( 3.5x)  resid +13.9
+  C2  topic 8: kultur/traditionen/heimatlandes (Essays on  obs   32 vs exp    4.6  ( 7.0x)  resid +13.3
+  A1  topic 7: liebe/bitte/julia (Informal notes about ev  obs   35 vs exp    6.9  ( 5.1x)  resid +11.2
+  A1  topic 14: baby/jens/babys (Congratulations on a bir  obs   26 vs exp    4.5  ( 5.8x)  resid +10.5
+  C1  topic 12: geehrte/praktikum/spezialist (IT internsh  obs   22 vs exp    3.8  ( 5.8x)  resid +9.6
+  C1  topic 4: deutschland/deutsch/deutsche (Au-pair stay  obs   22 vs exp    4.9  ( 4.5x)  resid +8.0
+  A2  topic 0: österreich/niederösterreich/oberösterreich  obs  421 vs exp  335.1  ( 1.3x)  resid +6.8
+  B1  topic 13: österreichische/europa/ländern (Austrian/  obs  400 vs exp  318.0  ( 1.3x)  resid +6.5
+
+Strongest negative associations (level under-represented in topic):
+  A2  topic 4: deutschland/deutsch/deutsche (Au-pair stay  obs   32 vs exp   97.6  resid -9.1
+  A2  topic 8: kultur/traditionen/heimatlandes (Essays on  obs   48 vs exp  120.1  resid -9.1
+  B2  topic 0: österreich/niederösterreich/oberösterreich  obs    0 vs exp   52.4  resid -8.0
+  B2  topic 13: österreichische/europa/ländern (Austrian/  obs    5 vs exp   52.5  resid -7.3
+  A2  topic 12: geehrte/praktikum/spezialist (IT internsh  obs   30 vs exp   76.0  resid -7.2
+  B2  topic 6: virus/krise/corona (Covid pandemic and hea  obs    4 vs exp   49.6  resid -7.2
+
+--- 5b. Same, MERLIN only (learner corpus) ---
+  A1  topic 14: baby/jens/babys (Congratulations on a bir  obs   24 vs exp    3.6  ( 6.7x)  resid +11.5
+  B2  topic 8: kultur/traditionen/heimatlandes (Essays on  obs   65 vs exp   26.1  ( 2.5x)  resid +9.4
+  B2  topic 4: deutschland/deutsch/deutsche (Au-pair stay  obs   71 vs exp   31.0  ( 2.3x)  resid +9.0
+  B1  topic 1: grüße/wünsche/liebe (Informal greeting and  obs  110 vs exp   61.0  ( 1.8x)  resid +8.4
+  A2  topic 7: liebe/bitte/julia (Informal notes about ev  obs  112 vs exp   62.3  ( 1.8x)  resid +8.4
+  B2  topic 12: geehrte/praktikum/spezialist (IT internsh  obs   42 vs exp   19.6  ( 2.1x)  resid +6.2
+  A2  topic 10: arbeit/neuburg/ingo (Work, unemployment a  obs   44 vs exp   21.4  ( 2.1x)  resid +6.0
+  C1  topic 4: deutschland/deutsch/deutsche (Au-pair stay  obs   14 vs exp    4.4  ( 3.1x)  resid +4.9
+  A2  topic 14: baby/jens/babys (Congratulations on a bir  obs   37 vs exp   19.9  ( 1.9x)  resid +4.7
+  B2  topic 2: stadt/grüßen/freundlichen (Formal letters   obs   89 vs exp   63.1  ( 1.4x)  resid +4.3
+
+--- 6. Sensitivity to topic assignment confidence ---
+topic_strength: median 0.072, IQR [0.016, 0.125]
+All documents          (n= 5805): V = 0.281 [0.270, 0.293]
+Top half by confidence (n= 2903): V = 0.361 [0.344, 0.377]
+This is a selection sensitivity check: the subset has a different
+composition, so a higher V does not by itself show that low-strength
+documents dilute the association.

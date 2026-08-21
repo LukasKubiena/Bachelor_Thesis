@@ -1,0 +1,3 @@
+dataset,cefr_level,n,mean,median,q25,q75
+deplain_apa_doc,A2,483,457.4347826086956,411.0,368.5,473.0
+deplain_apa_doc,B1,483,495.0910973084886,440.0,399.0,506.0

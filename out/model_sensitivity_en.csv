@@ -1,0 +1,4 @@
+model,v_cefr_asag_en,v_elg_cefr_en,v_icle500_en
+KeyNMF,0.2351,0.2041,0.0882
+tfidf_NMF,0.2302,0.1914,0.1124
+S3 (dominant absolute axis),0.2787,0.1134,0.0617

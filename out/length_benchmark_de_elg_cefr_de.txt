@@ -1,0 +1,13 @@
+LENGTH VS TOPIC BENCHMARK (de_elg_cefr_de), n=509
+Grouped 5-fold CV on cv_group; topic features are transductive.
+majority class (floor): weighted_f1=0.0833, macro_f1=0.0614, qwk=0.0000
+word count only: weighted_f1=0.1487, macro_f1=0.1286, qwk=0.0908
+surface features: weighted_f1=0.4343, macro_f1=0.4549, qwk=0.7677
+topic only: weighted_f1=0.3186, macro_f1=0.3094, qwk=0.4511
+surface + topic: weighted_f1=0.4332, macro_f1=0.4610, qwk=0.7274
+Repeated-CV topic increment over surface features:
+weighted_f1: mean=+0.0240, range=[-0.0012, +0.0427]
+macro_f1: mean=+0.0266, range=[+0.0061, +0.0413]
+qwk: mean=-0.0280, range=[-0.0403, -0.0184]
+Interpret metrics separately; a zero-crossing range does not support improvement.
+These comparisons are predictive diagnostics, not a causal decomposition.

@@ -1,0 +1,14 @@
+near_duplicate_pairs=16
+within_corpus=16
+cross_corpus=0
+threshold=0.85
+n_deplain_apa_doc=0
+n_apa_lha=0
+cross_corpus_deplain_apa_vs_apa_lha=0
+share_of_deplain=NA
+deplain_apa_label_mismatch=0
+bipartite_max_similarity=NA
+bipartite_n_ge_threshold=0
+bipartite_label_mismatch=0
+cv_groups=1454
+multirow_cv_groups=11

@@ -1,0 +1,6 @@
+ accuracy  macro_f1  weighted_f1  adjacent_accuracy      qwk                       model
+ 0.391126  0.214345     0.326452           0.810239 0.320557        topic_mixture_random
+ 0.285324  0.223753     0.273274           0.651877 0.275676 topic_mixture_topic_grouped
+ 0.464846  0.260044     0.389115           0.869625 0.506176                tfidf_random
+ 0.415017  0.201447     0.328927           0.853925 0.422644         tfidf_topic_grouped
+tfidf_split_difference_weighted_f1=0.0602

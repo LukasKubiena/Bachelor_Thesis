@@ -1,0 +1,26 @@
+=== Topic vs CEFR level (point estimates; see 03b for CIs) ===
+Cramér's V: 0.281  chi2 p: 0.00e+00
+Topic vs source V: 0.452  p: 0.00e+00
+
+=== Within-source point estimates ===
+apa_lha (n=3299): V=0.045, p=1.11e-01
+deplain_apa_doc (n=966): V=0.060, p=2.14e-01
+elg_cefr_de (n=509): V=0.205, p=3.80e-11
+merlin_de (n=1031): V=0.357, p=1.67e-122
+
+Saved topic_summary_de.csv
+Topic  0 [Austrian regional Covid measures] (n=745, A2 57%): österreich, niederösterreich, oberösterreich, schulen, lockdown, krise
+Topic  1 [Informal greeting and invitation letters] (n=260, B1 53%): grüße, wünsche, liebe, besuchen, stadt, freue, istanbul, schön, michae
+Topic  2 [Formal letters seeking housing] (n=396, A2 36%): stadt, grüßen, freundlichen, herren, zimmer, geehrte, balkon, meier, d
+Topic  3 [Austrian domestic politics] (n=375, A2 51%): regierung, partei, wahl, politiker, parlament, nationalrats, gewählt, 
+Topic  4 [Au-pair stays in Germany / learning German] (n=217, B2 40%): deutschland, deutsch, deutsche, sprache, deutschlernen, geehrte, deuts
+Topic  5 [US politics] (n=283, A2 51%): trump, präsident, demokraten, us, republikaner, präsidenten, washingto
+Topic  6 [Covid pandemic and health] (n=706, A2 52%): virus, krise, corona, krankheit, gestorben, woche, meldungen, pandemie
+Topic  7 [Informal notes about everyday arrangements] (n=465, A2 49%): liebe, bitte, julia, hund, maria, fahren, grüße, hallo, leider, daniel
+Topic  8 [Essays on home vs host-country culture] (n=267, B2 32%): kultur, traditionen, heimatlandes, ausland, kulturen, wichtig, sprache
+Topic  9 [Brexit] (n=154, A2 53%): brexit, großbritannien, britische, parlament, britannien, johnson, min
+Topic 10 [Work, unemployment and housing] (n=375, A2 49%): arbeit, neuburg, ingo, wohnung, brauche, arbeitslose, arbeiten, gefund
+Topic 11 [Austrian survey and opinion reporting] (n=343, A2 51%): österreicher, meisten, oberösterreich, salzburg, befragten, ansteckend
+Topic 12 [IT internship applications] (n=169, B2 35%): geehrte, praktikum, spezialist, firma, informatik, computer, odenwalds
+Topic 13 [Austrian/European news (travel, economy, sport)] (n=747, B1 54%): österreichische, europa, ländern, länder, euro, österreichischen, öste
+Topic 14 [Congratulations on a birth] (n=303, A2 49%): baby, jens, babys, glückwünsche, mutter, heißt, maria, grüße, name, ha

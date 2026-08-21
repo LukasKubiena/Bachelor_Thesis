@@ -1,0 +1,91 @@
+level,topic,topic_label,observed,expected,obs_over_exp,std_residual
+B2,4,4: deutschland/deutsch/deutsche (Au-pair stays in Germany / learning German),86,15.3,5.64,19.15
+B2,8,8: kultur/traditionen/heimatlandes (Essays on home vs host-country culture),85,18.8,4.53,16.23
+B2,12,12: geehrte/praktikum/spezialist (IT internship applications),59,11.9,4.97,14.39
+C1,8,8: kultur/traditionen/heimatlandes (Essays on home vs host-country culture),39,6.0,6.52,13.98
+B2,2,2: stadt/grüßen/freundlichen (Formal letters seeking housing),96,27.8,3.45,13.88
+C2,8,8: kultur/traditionen/heimatlandes (Essays on home vs host-country culture),32,4.6,7.03,13.28
+A1,7,7: liebe/bitte/julia (Informal notes about everyday arrangements),35,6.9,5.08,11.25
+A1,14,14: baby/jens/babys (Congratulations on a birth),26,4.5,5.79,10.51
+C1,12,12: geehrte/praktikum/spezialist (IT internship applications),22,3.8,5.81,9.61
+A2,4,4: deutschland/deutsch/deutsche (Au-pair stays in Germany / learning German),32,97.6,0.33,-9.12
+A2,8,8: kultur/traditionen/heimatlandes (Essays on home vs host-country culture),48,120.1,0.4,-9.08
+B2,0,0: österreich/niederösterreich/oberösterreich (Austrian regional Covid measures),0,52.4,0.0,-8.04
+C1,4,4: deutschland/deutsch/deutsche (Au-pair stays in Germany / learning German),22,4.9,4.53,8.02
+B2,13,"13: österreichische/europa/ländern (Austrian/European news (travel, economy, sport))",5,52.5,0.1,-7.28
+A2,12,12: geehrte/praktikum/spezialist (IT internship applications),30,76.0,0.39,-7.22
+B2,6,6: virus/krise/corona (Covid pandemic and health),4,49.6,0.08,-7.17
+A2,0,0: österreich/niederösterreich/oberösterreich (Austrian regional Covid measures),421,335.1,1.26,6.78
+B1,13,"13: österreichische/europa/ländern (Austrian/European news (travel, economy, sport))",400,318.0,1.26,6.5
+B1,8,8: kultur/traditionen/heimatlandes (Essays on home vs host-country culture),63,113.7,0.55,-6.42
+B2,3,3: regierung/partei/wahl (Austrian domestic politics),1,26.4,0.04,-5.3
+B2,11,11: österreicher/meisten/oberösterreich (Austrian survey and opinion reporting),1,24.1,0.04,-5.03
+C2,12,12: geehrte/praktikum/spezialist (IT internship applications),11,2.9,3.82,4.89
+B2,5,5: trump/präsident/demokraten (US politics),0,19.9,0.0,-4.74
+C1,0,0: österreich/niederösterreich/oberösterreich (Austrian regional Covid measures),0,16.7,0.0,-4.42
+B1,4,4: deutschland/deutsch/deutsche (Au-pair stays in Germany / learning German),62,92.4,0.67,-4.25
+A2,1,1: grüße/wünsche/liebe (Informal greeting and invitation letters),84,116.9,0.72,-4.2
+A2,6,6: virus/krise/corona (Covid pandemic and health),368,317.5,1.16,4.07
+B1,12,12: geehrte/praktikum/spezialist (IT internship applications),47,71.9,0.65,-3.94
+C2,4,4: deutschland/deutsch/deutsche (Au-pair stays in Germany / learning German),11,3.7,2.97,3.9
+A2,2,2: stadt/grüßen/freundlichen (Formal letters seeking housing),141,178.1,0.79,-3.88
+B1,7,7: liebe/bitte/julia (Informal notes about everyday arrangements),159,197.9,0.8,-3.81
+C1,6,6: virus/krise/corona (Covid pandemic and health),2,15.8,0.13,-3.75
+C1,13,"13: österreichische/europa/ländern (Austrian/European news (travel, economy, sport))",3,16.7,0.18,-3.64
+A1,0,0: österreich/niederösterreich/oberösterreich (Austrian regional Covid measures),0,11.0,0.0,-3.59
+A1,13,"13: österreichische/europa/ländern (Austrian/European news (travel, economy, sport))",0,11.1,0.0,-3.59
+C2,0,0: österreich/niederösterreich/oberösterreich (Austrian regional Covid measures),1,12.7,0.08,-3.55
+A1,6,6: virus/krise/corona (Covid pandemic and health),0,10.5,0.0,-3.48
+B2,9,9: brexit/großbritannien/britische (Brexit),0,10.8,0.0,-3.46
+B1,2,2: stadt/grüßen/freundlichen (Formal letters seeking housing),136,168.6,0.81,-3.43
+B1,1,1: grüße/wünsche/liebe (Informal greeting and invitation letters),137,110.7,1.24,3.38
+B2,14,14: baby/jens/babys (Congratulations on a birth),7,21.3,0.33,-3.3
+A1,10,"10: arbeit/neuburg/ingo (Work, unemployment and housing)",13,5.6,2.34,3.29
+B2,10,"10: arbeit/neuburg/ingo (Work, unemployment and housing)",11,26.4,0.42,-3.21
+C2,6,6: virus/krise/corona (Covid pandemic and health),2,12.0,0.17,-3.11
+C1,11,11: österreicher/meisten/oberösterreich (Austrian survey and opinion reporting),0,7.7,0.0,-2.89
+C1,3,3: regierung/partei/wahl (Austrian domestic politics),1,8.4,0.12,-2.67
+C1,5,5: trump/präsident/demokraten (US politics),0,6.3,0.0,-2.61
+A2,3,3: regierung/partei/wahl (Austrian domestic politics),192,168.7,1.14,2.5
+A1,3,3: regierung/partei/wahl (Austrian domestic politics),0,5.6,0.0,-2.46
+B1,6,6: virus/krise/corona (Covid pandemic and health),330,300.5,1.1,2.39
+C1,10,"10: arbeit/neuburg/ingo (Work, unemployment and housing)",15,8.4,1.79,2.38
+B1,11,11: österreicher/meisten/oberösterreich (Austrian survey and opinion reporting),167,146.0,1.14,2.36
+A1,11,11: österreicher/meisten/oberösterreich (Austrian survey and opinion reporting),0,5.1,0.0,-2.34
+B1,5,5: trump/präsident/demokraten (US politics),139,120.5,1.15,2.28
+C2,5,5: trump/präsident/demokraten (US politics),0,4.8,0.0,-2.27
+A2,11,11: österreicher/meisten/oberösterreich (Austrian survey and opinion reporting),174,154.3,1.13,2.21
+C1,2,2: stadt/grüßen/freundlichen (Formal letters seeking housing),15,8.9,1.69,2.16
+A1,5,5: trump/präsident/demokraten (US politics),0,4.2,0.0,-2.12
+B1,3,3: regierung/partei/wahl (Austrian domestic politics),179,159.6,1.12,2.09
+A2,9,9: brexit/großbritannien/britische (Brexit),82,69.3,1.18,2.09
+C2,11,11: österreicher/meisten/oberösterreich (Austrian survey and opinion reporting),1,5.8,0.17,-2.08
+A2,5,5: trump/präsident/demokraten (US politics),144,127.3,1.13,2.05
+A1,8,8: kultur/traditionen/heimatlandes (Essays on home vs host-country culture),0,4.0,0.0,-2.05
+C2,13,"13: österreichische/europa/ländern (Austrian/European news (travel, economy, sport))",6,12.7,0.47,-2.04
+A2,7,7: liebe/bitte/julia (Informal notes about everyday arrangements),230,209.1,1.1,2.03
+B2,1,1: grüße/wünsche/liebe (Informal greeting and invitation letters),26,18.3,1.42,1.92
+C1,14,14: baby/jens/babys (Congratulations on a birth),2,6.8,0.29,-1.91
+B1,10,"10: arbeit/neuburg/ingo (Work, unemployment and housing)",142,159.6,0.89,-1.9
+C1,9,9: brexit/großbritannien/britische (Brexit),0,3.4,0.0,-1.9
+C2,3,3: regierung/partei/wahl (Austrian domestic politics),2,6.4,0.31,-1.81
+A2,10,"10: arbeit/neuburg/ingo (Work, unemployment and housing)",185,168.7,1.1,1.75
+C1,1,1: grüße/wünsche/liebe (Informal greeting and invitation letters),2,5.8,0.34,-1.64
+A1,12,12: geehrte/praktikum/spezialist (IT internship applications),0,2.5,0.0,-1.62
+A1,9,9: brexit/großbritannien/britische (Brexit),0,2.3,0.0,-1.54
+B1,14,14: baby/jens/babys (Congratulations on a birth),117,129.0,0.91,-1.43
+A2,14,14: baby/jens/babys (Congratulations on a birth),147,136.3,1.08,1.27
+C2,1,1: grüße/wünsche/liebe (Informal greeting and invitation letters),7,4.4,1.58,1.26
+C1,7,7: liebe/bitte/julia (Informal notes about everyday arrangements),7,10.4,0.67,-1.12
+C2,2,2: stadt/grüßen/freundlichen (Formal letters seeking housing),4,6.8,0.59,-1.11
+C2,10,"10: arbeit/neuburg/ingo (Work, unemployment and housing)",9,6.4,1.41,1.07
+B2,7,7: liebe/bitte/julia (Informal notes about everyday arrangements),27,32.7,0.83,-1.07
+A1,2,2: stadt/grüßen/freundlichen (Formal letters seeking housing),4,5.9,0.68,-0.8
+B1,9,9: brexit/großbritannien/britische (Brexit),70,65.6,1.07,0.73
+C2,14,14: baby/jens/babys (Congratulations on a birth),4,5.2,0.77,-0.53
+B1,0,0: österreich/niederösterreich/oberösterreich (Austrian regional Covid measures),323,317.1,1.02,0.47
+A1,4,4: deutschland/deutsch/deutsche (Au-pair stays in Germany / learning German),4,3.2,1.24,0.45
+C2,9,9: brexit/großbritannien/britische (Brexit),2,2.6,0.76,-0.4
+C2,7,7: liebe/bitte/julia (Informal notes about everyday arrangements),7,7.9,0.88,-0.35
+A2,13,"13: österreichische/europa/ländern (Austrian/European news (travel, economy, sport))",333,336.0,0.99,-0.24
+A1,1,1: grüße/wünsche/liebe (Informal greeting and invitation letters),4,3.9,1.04,0.08

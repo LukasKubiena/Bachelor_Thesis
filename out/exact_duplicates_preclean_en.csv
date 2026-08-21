@@ -1,0 +1,2 @@
+text_sha256,n_rows,n_corpora,n_levels,datasets,levels,action
+bd0ecef49979b43c7d784a31a7cf05a40251757a14e7632f21c223d1d20f4d57,2,1,1,elg_cefr_en,B1,keep_first_redundant_copy

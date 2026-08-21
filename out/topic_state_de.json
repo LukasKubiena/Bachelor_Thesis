@@ -1,0 +1,9 @@
+{
+  "source_sha256": "d4b7da831289745793eeb0dae256edd3ce1a0b85034dfa0f5d3eaa0358d45f97",
+  "with_topics_sha256": "4e461d2fc7b10e4b7b5869623c7db04ad624423b37502dfc5e86ae431dc093f2",
+  "doc_topic_sha256": "aacda3b23bb0451f89873dbb5ac22542881e4b13af1edb05a2e155fe68e1151c",
+  "topic_words_sha256": "1b7b03fa901317ed063dce6df9283c0aea127810b1f7403835611d03bbda1d3d",
+  "n_documents": 5805,
+  "n_topics": 15,
+  "encoder": "paraphrase-multilingual-MiniLM-L12-v2"
+}

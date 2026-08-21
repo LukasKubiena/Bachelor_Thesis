@@ -1,0 +1,2 @@
+corpus,n,n_topics_used,n_topic_components,n_cross_topic_pairs,status
+apa_lha,3299,15,1,585,"not estimable: leakage-safe topic grouping leaves 1 component(s), fewer than 5 folds"

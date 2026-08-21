@@ -1,0 +1,25 @@
+=== Topic vs CEFR level (point estimates; see 03b for CIs) ===
+Cramér's V: 0.222  chi2 p: 4.03e-53
+Topic vs source V: 0.630  p: 6.98e-233
+
+=== Within-source point estimates ===
+cefr_asag_en (n=266): V=0.235, p=1.15e-07
+elg_cefr_en (n=711): V=0.204, p=5.60e-17
+icle500_en (n=488): V=0.088, p=5.59e-02
+
+Saved topic_summary_en.csv
+Topic  0 [] (n=110, B2 41%): university, students, theoretical, universities, degree, degrees, stud
+Topic  1 [] (n=42, B2 40%): prison, criminals, prisons, punish, crime, criminal, prisoners, rehabi
+Topic  2 [] (n=84, B2 48%): imagination, dreaming, modern, industrialisation, science, opinion, dr
+Topic  3 [] (n=76, B2 45%): feminists, feminism, feminist, women, woman, harm, society, female, ri
+Topic  4 [] (n=99, B2 36%): money, evil, rich, song, poor, greed, society, wealth, root, bad, powe
+Topic  5 [] (n=58, B2 47%): punishment, murder, death, penalty, kill, crime, killed, crimes, killi
+Topic  6 [] (n=71, B2 41%): religion, opium, century, marx, life, nowadays, society, title, religi
+Topic  7 [] (n=74, B1 39%): book, read, writing, books, story, written, writers, reading, write, w
+Topic  8 [] (n=24, B2 50%): phones, mobile, phone, mobiles, communication, devices, device, nowada
+Topic  9 [] (n=60, B1 38%): english, learn, teacher, language, teachers, learning, teach, teaching
+Topic 10 [] (n=436, B1 32%): day, people, looked, time, door, walked, house, happy, night, morning,
+Topic 11 [] (n=66, B2 38%): king, queen, royal, henry, england, london, throne, elizabeth, heir, p
+Topic 12 [] (n=42, B2 64%): legislative, legislators, government, political, legislatures, policy,
+Topic 13 [] (n=70, B2 39%): social, networks, people, relationships, life, friends, public, intern
+Topic 14 [] (n=153, B1 35%): travel, country, trip, visit, journey, north, travelling, south, canad

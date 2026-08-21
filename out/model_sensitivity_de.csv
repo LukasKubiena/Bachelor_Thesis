@@ -1,0 +1,4 @@
+model,v_apa_lha,v_deplain_apa_doc,v_elg_cefr_de,v_merlin_de
+KeyNMF,0.0449,0.0604,0.2053,0.3572
+tfidf_NMF,0.0195,0.0901,0.2895,0.359
+S3 (dominant absolute axis),0.0,0.0,0.3119,0.3226

@@ -1,0 +1,22 @@
+# input data is not committed. see readme for how to get it.
+in/*
+!in/README.md
+
+# generated outputs. sample results are committed by force-adding, see readme.
+out/*.npy
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# os / editor
+.DS_Store
+.Rhistory
+.idea/
+.vscode/
+.cursor/
+.mplconfig/

@@ -1,0 +1,4 @@
+encoder,v_apa_lha,p_apa_lha,v_deplain_apa_doc,p_deplain_apa_doc,v_elg_cefr_de,p_elg_cefr_de,v_merlin_de,p_merlin_de
+paraphrase-multilingual-MiniLM-L12-v2,0.0449,1.11e-01,0.0604,2.14e-01,0.2053,3.80e-11,0.3572,1.67e-122
+distiluse-base-multilingual-cased-v2,0.0841,6.55e-04,0.1412,1.44e-03,0.1651,1.90e-06,0.2895,1.89e-78
+T-Systems-onsite/cross-en-de-roberta-sentence-transformer,0.0942,7.83e-05,0.1624,1.42e-04,0.1999,9.11e-11,0.3536,1.63e-124

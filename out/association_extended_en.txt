@@ -1,0 +1,95 @@
+==============================================================================
+EXTENDED ASSOCIATION ANALYSIS (en), n = 1,465 documents
+bootstrap diagnostic draws = 2,000, permutations = 5,000
+==============================================================================
+
+--- 1. Topic vs CEFR level, all data ---
+Cramer's V (bias-corrected): 0.222 [0.198, 0.246]   bootstrap SD 0.010
+Permutation p: < 2.0e-04  (5,000 permutations)
+Adjusted mutual information: 0.071   (raw NMI 0.082)
+Theil's U (level | topic):   0.103   <- share of level entropy resolved by knowing the topic
+Theil's U (topic | level):   0.069
+Kruskal-Wallis on level rank by topic: H = 284.6, epsilon^2 = 0.187, p = 1.94e-52
+  epsilon^2 is the ordinal-aware complement to V: the share of variance in
+  CEFR rank explained by topic membership, without assuming topics are ordered.
+
+--- 2. Topic vs source corpus (the competing explanation) ---
+Cramer's V: 0.630 [0.594, 0.666]   permutation p < 2.0e-04
+Compare against the level association above. Non-overlap is a descriptive
+contrast, not a formal test of the difference between the two V values.
+CIs overlap: False
+
+--- 3. Topic vs level WITHIN each corpus ---
+Matched-n analyses subsample every corpus to n = 266 (the smallest corpus), 200 repetitions.
+
+cefr_asag_en       n=  266  V = 0.235 [0.169, 0.296]  perm p 8.00e-04 (Holm 0.002)
+                           at matched n=266: V = 0.235 +/- 0.000   eps^2 = 0.271
+                           scenario-specific 80% detection point: V = 0.182 (observed V is above this scenario point)
+                           [power sim size check: type I error = 0.050, nominal 0.05; bootstrap bias = +0.043]
+elg_cefr_en        n=  711  V = 0.204 [0.167, 0.240]  perm p < 2.0e-04 (Holm 0.001)
+                           at matched n=266: V = 0.189 +/- 0.030   eps^2 = 0.140
+                           scenario-specific 80% detection point: V = 0.123 (observed V is above this scenario point)
+                           [power sim size check: type I error = 0.050, nominal 0.05; bootstrap bias = +0.031]
+icle500_en         n=  488  V = 0.088 [0.000, 0.150]  perm p 7.18e-02 (Holm 0.072)
+                           at matched n=266: V = 0.082 +/- 0.048   eps^2 = 0.034
+                           scenario-specific 80% detection point: V = 0.133 (observed V is below this scenario point)
+                           [power sim size check: type I error = 0.050, nominal 0.05; bootstrap bias = +0.072]
+
+Reading the power column: it applies only to the rotating-level tilt family
+implemented in minimum_detectable_v; it is not a universal threshold for
+all contingency tables having the same V.
+CIs use approximate noncentral-chi-square inversion. Bootstrap-normal,
+percentile and basic alternatives remain in the JSON/CSV as diagnostics.
+
+Corpus ranking, raw n:      cefr_asag_en > elg_cefr_en > icle500_en
+Corpus ranking, matched n:  cefr_asag_en > elg_cefr_en > icle500_en
+Spearman rho between raw and matched-n V: 1.000
+Note: the smallest corpus is subsampled to its own size, so its matched-n
+SD is 0 by construction. That is expected, not an error.
+
+--- 4. Cochran-Mantel-Haenszel: topic vs level, conditioning on corpus ---
+Null: within corpora, topic carries no information about level.
+  level A1: CMH chi2 =     21.8  df = 14  p = 8.39e-02  (Holm 8.39e-02)  -> not rejected
+  level A2: CMH chi2 =     84.5  df = 14  p = 4.14e-12  (Holm 2.48e-11)  -> REJECTED
+  level B1: CMH chi2 =     55.1  df = 14  p = 8.35e-07  (Holm 2.51e-06)  -> REJECTED
+  level B2: CMH chi2 =     65.2  df = 14  p = 1.40e-08  (Holm 7.00e-08)  -> REJECTED
+  level C1: CMH chi2 =     57.5  df = 14  p = 3.14e-07  (Holm 1.26e-06)  -> REJECTED
+  level C2: CMH chi2 =     52.7  df = 14  p = 2.14e-06  (Holm 4.28e-06)  -> REJECTED
+
+For rejected levels, topic and level remain associated within the
+corpus strata. This rules out corpus composition as the sole
+explanation, but does not identify a causal topic effect.
+
+--- 5. Standardised residuals (which topics go with which levels) ---
+Cells with |standardised residual| > 3: 19 of 90
+Cells with |standardised residual| > 2: 38
+
+Strongest positive associations (level over-represented in topic):
+  A2  topic 10: day/people/looked                          obs  125 vs exp   58.3  ( 2.1x)  resid +11.2
+  A1  topic 10: day/people/looked                          obs   31 vs exp   12.5  ( 2.5x)  resid +6.3
+  B2  topic 12: legislative/legislators/government         obs   27 vs exp   13.0  ( 2.1x)  resid +4.7
+  A2  topic 14: travel/country/trip                        obs   39 vs exp   20.5  ( 1.9x)  resid +4.7
+  C1  topic 6: religion/opium/century                      obs   21 vs exp   10.5  ( 2.0x)  resid +3.6
+  C2  topic 6: religion/opium/century                      obs   15 vs exp    6.7  ( 2.2x)  resid +3.5
+  B2  topic 2: imagination/dreaming/modern                 obs   40 vs exp   26.1  ( 1.5x)  resid +3.4
+  C1  topic 13: social/networks/people                     obs   19 vs exp   10.3  ( 1.8x)  resid +3.0
+  B2  topic 3: feminists/feminism/feminist                 obs   34 vs exp   23.6  ( 1.4x)  resid +2.6
+  B2  topic 5: punishment/murder/death                     obs   27 vs exp   18.0  ( 1.5x)  resid +2.6
+  C1  topic 8: phones/mobile/phone                         obs    8 vs exp    3.5  ( 2.3x)  resid +2.6
+  C1  topic 7: book/read/writing                           obs   18 vs exp   10.9  ( 1.6x)  resid +2.4
+
+Strongest negative associations (level under-represented in topic):
+  B2  topic 10: day/people/looked                          obs   82 vs exp  135.4  resid -6.6
+  C1  topic 10: day/people/looked                          obs   36 vs exp   64.3  resid -4.6
+  A2  topic 0: university/students/theoretical             obs    0 vs exp   14.7  resid -4.3
+  B1  topic 6: religion/opium/century                      obs    6 vs exp   20.3  resid -3.8
+  B2  topic 14: travel/country/trip                        obs   28 vs exp   47.5  resid -3.6
+  A2  topic 3: feminists/feminism/feminist                 obs    0 vs exp   10.2  resid -3.5
+
+--- 6. Sensitivity to topic assignment confidence ---
+topic_strength: median 0.139, IQR [0.072, 0.299]
+All documents          (n= 1465): V = 0.222 [0.198, 0.246]
+Top half by confidence (n=  733): V = 0.260 [0.225, 0.294]
+This is a selection sensitivity check: the subset has a different
+composition, so a higher V does not by itself show that low-strength
+documents dilute the association.

@@ -1,0 +1,158 @@
+==============================================================================
+LENGTH-STRATIFIED ASSOCIATION (de), n = 5,805
+bootstrap draws = 2,000, permutations = 5,000
+==============================================================================
+
+CAUTION 1. Conditioning on length reduces the variance in level within
+each stratum, since length predicts level so strongly. Power drops.
+A scenario-specific detection point is reported per bin so that a
+non-rejection is not mistaken for evidence of no association.
+
+CAUTION 2. Quartiles are coarse and residual confounding within a bin
+is possible. This is evidence, not proof.
+
+------------------------------------------------------------------------------
+apa_lha  n = 3,299
+  Spearman(level rank, word count) = 0.272, p = 7.09e-57
+  Unstratified topic vs level: V = 0.045 [0.000, 0.090]  perm p 1.09e-01
+  Length-bin sizes: Q1=835, Q2=822, Q3=828, Q4=814
+  Q1: n= 835  V = 0.021 [0.000, 0.142]  perm p 4.29e-01  scenario80=0.149  levels=2  residual rho=+0.060  [below scenario-specific 80% point]
+  Q2: n= 822  V = 0.040 [0.000, 0.149]  perm p 3.50e-01  scenario80=0.162  levels=2  residual rho=+0.039  [below scenario-specific 80% point]
+  Q3: n= 828  V = 0.027 [0.000, 0.144]  perm p 4.07e-01  scenario80=0.158  levels=2  residual rho=+0.062  [below scenario-specific 80% point]
+  Q4: n= 814  V = 0.150 [0.067, 0.231]  perm p 2.80e-03  scenario80=0.166  levels=2  residual rho=+0.073  [below scenario-specific 80% point]
+  Finer control: mean within-DECILE V = 0.076 (10 deciles, n~329 each). Read as a sparse-table sensitivity trend, not a bound.
+  CMH: topic vs level, stratified by length bin
+    level A2: chi2 =     29.4  df = 14  p = 9.20e-03  (Holm 1.84e-02)  -> REJECTED
+    level B1: chi2 =     29.4  df = 14  p = 9.20e-03  (Holm 1.84e-02)  -> REJECTED
+  MNLogit LRT (level ~ length  vs  length + topic): LR = 30.85  df = 14  p = 5.82e-03
+  Unstratified V = 0.045; mean within-QUARTILE V = 0.060 (4 bins); mean within-DECILE V = 0.076.
+  Change after length stratification: -33% at quartile level, -69% at decile level.
+  Largest residual rho(level, word count) inside a bin: 0.073.
+  POWER CAUTION: in at least one bin the observed V sits
+  below the scenario-specific 80% detection point. A non-rejection
+  in that bin is uninterpretable on its own.
+  Length-stratified CMH rejects for at least one level: True.
+  Reading: the unstratified association is already near
+  zero, so this corpus cannot support (or refute) the
+  learner-data collinearity claim.
+  (This is a parallel news control: A2/B1 is a professional
+  simplification target. Treat its result as a comparison of label
+  and production structure, not as confirmation of a predetermined null.)
+  Change in V under length quartiles: -33%
+  Change under RANDOM bins of the same sizes: +6% (sd 40.5pp, 200 draws)
+  Difference beyond the random-binning placebo: -39 percentage points.
+  NOTE: random binning itself changes V materially. Interpret the
+  observed-minus-placebo contrast, not the raw change alone.
+
+------------------------------------------------------------------------------
+deplain_apa_doc  n = 966
+  Spearman(level rank, word count) = 0.194, p = 1.12e-09
+  Unstratified topic vs level: V = 0.060 [0.000, 0.148]  perm p 1.97e-01
+  Length-bin sizes: Q1=245, Q2=240, Q3=240, Q4=241
+  Q1: n= 245  V = 0.000 [0.000, 0.164]  perm p 1.00e+00  scenario80=0.266  levels=2  residual rho=+0.174  [below scenario-specific 80% point]
+  Q2: n= 240  V = 0.218 [0.033, 0.370]  perm p 1.12e-02  scenario80=0.250  levels=2  residual rho=+0.075  [below scenario-specific 80% point]
+  Q3: n= 240  V = 0.000 [0.000, 0.183]  perm p 1.00e+00  scenario80=0.255  levels=2  residual rho=+0.030  [below scenario-specific 80% point]
+  Q4: n= 241  V = 0.012 [0.000, 0.243]  perm p 4.48e-01  scenario80=0.258  levels=2  residual rho=+0.016  [below scenario-specific 80% point]
+  Finer control: mean within-DECILE V = 0.073 (10 deciles, n~96 each). Read as a sparse-table sensitivity trend, not a bound.
+  CMH: topic vs level, stratified by length bin
+    level A2: chi2 =     13.3  df = 12  p = 3.47e-01  (Holm 6.94e-01)  -> not rejected
+    level B1: chi2 =     13.3  df = 12  p = 3.47e-01  (Holm 6.94e-01)  -> not rejected
+  MNLogit LRT: dropped: did not converge (or hit separation)
+  Unstratified V = 0.060; mean within-QUARTILE V = 0.058 (4 bins); mean within-DECILE V = 0.073.
+  Change after length stratification: 4% at quartile level, -22% at decile level.
+  Largest residual rho(level, word count) inside a bin: 0.174.
+  POWER CAUTION: in at least one bin the observed V sits
+  below the scenario-specific 80% detection point. A non-rejection
+  in that bin is uninterpretable on its own.
+  Length-stratified CMH rejects for at least one level: False.
+  Reading: the unstratified association is already near
+  zero, so this corpus cannot support (or refute) the
+  learner-data collinearity claim.
+  (This is a parallel news control: A2/B1 is a professional
+  simplification target. Treat its result as a comparison of label
+  and production structure, not as confirmation of a predetermined null.)
+  Change in V under length quartiles: 4%
+  Change under RANDOM bins of the same sizes: +3% (sd 46.0pp, 200 draws)
+  Difference beyond the random-binning placebo: 2 percentage points.
+
+------------------------------------------------------------------------------
+elg_cefr_de  n = 509
+  Spearman(level rank, word count) = 0.136, p = 2.11e-03
+  Unstratified topic vs level: V = 0.205 [0.160, 0.249]  perm p < 2.0e-04
+  Length-bin sizes: Q1=143, Q2=112, Q3=141, Q4=113
+  Q1: n= 143  V = 0.189 [0.060, 0.285]  perm p 1.68e-02  scenario80=0.236  levels=6  residual rho=+0.183  [below scenario-specific 80% point]
+  Q2: n= 112  V = 0.155 [0.000, 0.283]  perm p 1.50e-01  scenario80=0.301  levels=6  residual rho=+0.057  [below scenario-specific 80% point]
+  Q3: n= 141  V = 0.035 [0.000, 0.199]  perm p 4.10e-01  scenario80=0.254  levels=6  residual rho=+0.163  [below scenario-specific 80% point]
+  Q4: n= 113  V = 0.172 [0.000, 0.289]  perm p 6.18e-02  scenario80=0.250  levels=6  residual rho=+0.070  [below scenario-specific 80% point]
+  Finer control: mean within-DECILE V = 0.132 (10 deciles, n~50 each). Read as a sparse-table sensitivity trend, not a bound.
+  CMH: topic vs level, stratified by length bin
+    level A1: chi2 =     50.6  df = 14  p = 4.81e-06  (Holm 2.89e-05)  -> REJECTED
+    level A2: chi2 =     35.2  df = 14  p = 1.38e-03  (Holm 4.14e-03)  -> REJECTED
+    level B1: chi2 =     27.0  df = 14  p = 1.95e-02  (Holm 3.90e-02)  -> REJECTED
+    level B2: chi2 =     12.3  df = 14  p = 5.86e-01  (Holm 5.86e-01)  -> not rejected
+    level C1: chi2 =     48.5  df = 14  p = 1.07e-05  (Holm 5.37e-05)  -> REJECTED
+    level C2: chi2 =     40.1  df = 14  p = 2.49e-04  (Holm 9.98e-04)  -> REJECTED
+  MNLogit LRT: dropped: did not converge (or hit separation)
+  Unstratified V = 0.205; mean within-QUARTILE V = 0.138 (4 bins); mean within-DECILE V = 0.132.
+  Change after length stratification: 33% at quartile level, 36% at decile level.
+  Largest residual rho(level, word count) inside a bin: 0.183.
+  POWER CAUTION: in at least one bin the observed V sits
+  below the scenario-specific 80% detection point. A non-rejection
+  in that bin is uninterpretable on its own.
+  Length-stratified CMH rejects for at least one level: True.
+  Reading: report the quartile and decile summaries and the CMH
+  result together. Do not convert this into a yes/no claim
+  about whether topic 'survives' length control, and do not
+  read a surviving within-bin V as contradicting the
+  classifier decomposition: coarse bins under-control for
+  length, whereas the classifier conditions on it continuously.
+  Cross-check against the per-metric deltas in script 06,
+  which separate the bulk classes (weighted F1, QWK) from the
+  rare ones (macro F1).
+  Change in V under length quartiles: 33%
+  Change under RANDOM bins of the same sizes: +14% (sd 9.2pp, 200 draws)
+  Difference beyond the random-binning placebo: 19 percentage points.
+  NOTE: random binning itself changes V materially. Interpret the
+  observed-minus-placebo contrast, not the raw change alone.
+
+------------------------------------------------------------------------------
+merlin_de  n = 1,031
+  Spearman(level rank, word count) = 0.850, p = 1.58e-288
+  Unstratified topic vs level: V = 0.357 [0.329, 0.384]  perm p < 2.0e-04
+  Length-bin sizes: Q1=266, Q2=252, Q3=255, Q4=258
+  Q1: n= 266  V = 0.205 [0.114, 0.299]  perm p 6.00e-04  scenario80=0.194  levels=3  residual rho=+0.481
+  Q2: n= 252  V = 0.166 [0.075, 0.250]  perm p 3.60e-02  scenario80=0.239  levels=4  residual rho=+0.285  [below scenario-specific 80% point]
+  Q3: n= 255  V = 0.343 [0.269, 0.417]  perm p < 2.0e-04  scenario80=0.180  levels=4  residual rho=+0.535
+  Q4: n= 258  V = 0.069 [0.000, 0.173]  perm p 2.24e-01  scenario80=0.202  levels=4  residual rho=+0.275  [below scenario-specific 80% point]
+  Finer control: mean within-DECILE V = 0.159 (10 deciles, n~103 each). Read as a sparse-table sensitivity trend, not a bound.
+  CMH: topic vs level, stratified by length bin
+    level A1: chi2 =     28.1  df =  6  p = 8.95e-05  (Holm 2.69e-04)  -> REJECTED
+    level A2: chi2 =     18.8  df =  7  p = 8.99e-03  (Holm 1.80e-02)  -> REJECTED
+    level B1: chi2 =     48.4  df =  7  p = 2.93e-08  (Holm 1.17e-07)  -> REJECTED
+    level B2: chi2 =     57.7  df =  7  p = 4.31e-10  (Holm 2.16e-09)  -> REJECTED
+    level C1: chi2 =      7.5  df =  6  p = 2.75e-01  (Holm 2.75e-01)  -> not rejected
+  MNLogit LRT: dropped: did not converge (or hit separation)
+  Unstratified V = 0.357; mean within-QUARTILE V = 0.196 (4 bins); mean within-DECILE V = 0.159.
+  Change after length stratification: 45% at quartile level, 56% at decile level.
+  Largest residual rho(level, word count) inside a bin: 0.535.
+  This is LARGE: the bins do not fully control for length,
+  so the within-bin V overstates any residual topic signal.
+  Treat both summaries as diagnostics rather than adjusted effects;
+  finer bins reduce residual variation but increase sparse-table bias.
+  POWER CAUTION: in at least one bin the observed V sits
+  below the scenario-specific 80% detection point. A non-rejection
+  in that bin is uninterpretable on its own.
+  Length-stratified CMH rejects for at least one level: True.
+  Reading: report the quartile and decile summaries and the CMH
+  result together. Do not convert this into a yes/no claim
+  about whether topic 'survives' length control, and do not
+  read a surviving within-bin V as contradicting the
+  classifier decomposition: coarse bins under-control for
+  length, whereas the classifier conditions on it continuously.
+  Cross-check against the per-metric deltas in script 06,
+  which separate the bulk classes (weighted F1, QWK) from the
+  rare ones (macro F1).
+  Change in V under length quartiles: 45%
+  Change under RANDOM bins of the same sizes: -3% (sd 2.2pp, 200 draws)
+  Difference beyond the random-binning placebo: 48 percentage points.
+

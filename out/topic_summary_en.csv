@@ -1,0 +1,16 @@
+topic,top_words,interpreted_label,n_texts,dominant_level,dominant_level_share,dominant_source,dominant_source_share
+0,"university, students, theoretical, universities, degree, degrees, student, education, study, studies, courses, graduate, studying, subjects, educational",,110,B2,0.41,icle500_en,0.83
+1,"prison, criminals, prisons, punish, crime, criminal, prisoners, rehabilitate, society, crimes, punishment, civilized, outdated, jail, punished",,42,B2,0.4,icle500_en,0.98
+2,"imagination, dreaming, modern, industrialisation, science, opinion, dream, dreams, technology, life, imagine, nowadays, future, society, reality",,84,B2,0.48,icle500_en,0.77
+3,"feminists, feminism, feminist, women, woman, harm, society, female, rights, equality, sexes, gender, movement, political, discrimination",,76,B2,0.45,icle500_en,0.91
+4,"money, evil, rich, song, poor, greed, society, wealth, root, bad, power, people, title, reason, afford",,99,B2,0.36,icle500_en,0.66
+5,"punishment, murder, death, penalty, kill, crime, killed, crimes, killing, punished, murderer, murderers, justice, punish, criminals",,58,B2,0.47,icle500_en,0.83
+6,"religion, opium, century, marx, life, nowadays, society, title, religious, television, masses, god, reality, church, opinion",,71,B2,0.41,icle500_en,0.86
+7,"book, read, writing, books, story, written, writers, reading, write, writer, published, stories, author, readers, reader",,74,B1,0.39,elg_cefr_en,0.7
+8,"phones, mobile, phone, mobiles, communication, devices, device, nowadays, calls, ringing, etiquette, children, people, public, privacy",,24,B2,0.5,icle500_en,0.83
+9,"english, learn, teacher, language, teachers, learning, teach, teaching, taught, school, class, learned, languages, speaking, learners",,60,B1,0.38,elg_cefr_en,0.48
+10,"day, people, looked, time, door, walked, house, happy, night, morning, family, children, suddenly, evening, life",,436,B1,0.32,elg_cefr_en,0.75
+11,"king, queen, royal, henry, england, london, throne, elizabeth, heir, princess, palace, monarch, castle, monarchy, empire",,66,B2,0.38,elg_cefr_en,1.0
+12,"legislative, legislators, government, political, legislatures, policy, public, congress, vote, representatives, constituents, representation, constituency, constitution, elected",,42,B2,0.64,elg_cefr_en,0.74
+13,"social, networks, people, relationships, life, friends, public, internet, facebook, media, privacy, network, real, communicate, society",,70,B2,0.39,cefr_asag_en,0.76
+14,"travel, country, trip, visit, journey, north, travelling, south, canada, continent, winter, africa, land, beautiful, travellers",,153,B1,0.35,elg_cefr_en,0.78

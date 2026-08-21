@@ -1,0 +1,17 @@
+i,j,similarity,dataset_i,dataset_j,level_i,level_j,same_corpus,pair_id_i,pair_id_j
+44,55,0.9797,icle500_en,icle500_en,B1,B1,True,icle500_en__44,icle500_en__55
+766,769,0.9827,elg_cefr_en,elg_cefr_en,A1,A1,True,elg_cefr_en__766,elg_cefr_en__769
+1141,1174,1.0,elg_cefr_en,elg_cefr_en,B2,B2,True,elg_cefr_en__1141,elg_cefr_en__1174
+1143,1152,0.9885,elg_cefr_en,elg_cefr_en,B2,B2,True,elg_cefr_en__1143,elg_cefr_en__1152
+1146,1146,1.0,elg_cefr_en,elg_cefr_en,B2,B2,True,elg_cefr_en__1146,elg_cefr_en__1146
+1153,1155,0.979,elg_cefr_en,elg_cefr_en,B2,B2,True,elg_cefr_en__1153,elg_cefr_en__1155
+1164,1210,0.9851,elg_cefr_en,elg_cefr_en,B2,B2,True,elg_cefr_en__1164,elg_cefr_en__1210
+1174,1174,1.0,elg_cefr_en,elg_cefr_en,B2,B2,True,elg_cefr_en__1174,elg_cefr_en__1174
+1183,1221,1.0,elg_cefr_en,elg_cefr_en,B2,B2,True,elg_cefr_en__1183,elg_cefr_en__1221
+1146,1204,1.0,elg_cefr_en,elg_cefr_en,B2,B2,True,elg_cefr_en__1146,elg_cefr_en__1204
+1205,1222,1.0,elg_cefr_en,elg_cefr_en,B2,B2,True,elg_cefr_en__1205,elg_cefr_en__1222
+1211,1211,1.0,elg_cefr_en,elg_cefr_en,B2,B2,True,elg_cefr_en__1211,elg_cefr_en__1211
+1211,1218,1.0,elg_cefr_en,elg_cefr_en,B2,B2,True,elg_cefr_en__1211,elg_cefr_en__1218
+1221,1221,1.0,elg_cefr_en,elg_cefr_en,B2,B2,True,elg_cefr_en__1221,elg_cefr_en__1221
+1222,1222,1.0,elg_cefr_en,elg_cefr_en,B2,B2,True,elg_cefr_en__1222,elg_cefr_en__1222
+1289,1391,0.9528,elg_cefr_en,elg_cefr_en,B2,C1,True,elg_cefr_en__1289,elg_cefr_en__1391
