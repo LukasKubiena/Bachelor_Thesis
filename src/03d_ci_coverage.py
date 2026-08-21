@@ -1,18 +1,4 @@
-"""Step 3d: simulation check for the Cramer's V intervals.
-
-The primary interval is obtained by inverting the noncentral chi-square
-distribution. This script checks its empirical coverage, alongside three
-bootstrap alternatives, under each corpus's observed joint distribution and
-under independence with the same margins. Using the actual table dimensions
-and margins is important: a balanced synthetic 6-by-15 table does not validate
-an interval for the two-level, sparse news tables.
-
-Run:
-    python src/03d_ci_coverage.py --lang de
-    python src/03d_ci_coverage.py --lang en --n-rep 300 --n-boot 300
-
-Writes out/ci_coverage_<lang>.csv.
-"""
+"""step 3d: confidence-interval coverage"""
 
 from __future__ import annotations
 

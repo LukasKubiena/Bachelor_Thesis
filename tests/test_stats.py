@@ -1,10 +1,4 @@
-"""tests for the functions in stats_utils.py.
-
-the statistical functions produce many of the thesis results. the tests cover
-known failure modes in the cmh covariance and confidence intervals.
-
-Run:  pytest -q
-"""
+"""statistical function tests"""
 
 from __future__ import annotations
 
@@ -17,9 +11,9 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from config import normalize_level  # noqa: E402
+from config import normalize_level  # noqa: e402
 from stats_utils import (
-    ci_coverage_check,  # noqa: E402
+    ci_coverage_check,  # noqa: e402
     bootstrap_v,
     cmh_by_level,
     cramers_v,
@@ -33,21 +27,18 @@ from stats_utils import (
 )
 
 
-# ---------------------------------------------------------------------------
 # cramer's v
-# ---------------------------------------------------------------------------
 
 
 def test_cramers_v_perfect_association():
-    """A block-diagonal table is a perfect association: V must be ~1."""
+    """a block-diagonal table is a perfect association: v must be ~1"""
     ct = pd.DataFrame(np.diag([100, 100, 100]))
     v, _ = cramers_v(ct)
     assert v == pytest.approx(1.0, abs=0.01)
 
 
 def test_cramers_v_independence_is_near_zero():
-    """A table built from independent margins has V at or near 0, and the
-    Bergsma correction should clip it to exactly 0 rather than reporting noise."""
+    """a table built from independent margins has v at or near 0, and the"""
     rng = np.random.default_rng(0)
     a = rng.choice(["A1", "A2", "B1"], 4000)
     b = rng.choice(list(range(5)), 4000)
@@ -58,8 +49,7 @@ def test_cramers_v_independence_is_near_zero():
 
 
 def test_cramers_v_known_2x2():
-    """Hand-checkable case. For a 2x2 table V equals the phi coefficient,
-    which for this table is |ad - bc| / sqrt(row/col product marginals)."""
+    """hand-checkable case. for a 2x2 table v equals the phi coefficient,"""
     ct = pd.DataFrame([[40, 10], [10, 40]])
     a, b, c, d = 40, 10, 10, 40
     phi = abs(a * d - b * c) / np.sqrt((a + b) * (c + d) * (a + c) * (b + d))
@@ -67,7 +57,7 @@ def test_cramers_v_known_2x2():
 
 
 def test_bias_correction_shrinks_estimate():
-    """The corrected V must never exceed the uncorrected one."""
+    """the corrected v must never exceed the uncorrected one"""
     rng = np.random.default_rng(1)
     a = rng.choice(list("ABCDEF"), 300)
     b = rng.choice(list(range(15)), 300)
@@ -75,13 +65,11 @@ def test_bias_correction_shrinks_estimate():
     assert cramers_v(ct)[0] <= cramers_v_uncorrected(ct) + 1e-12
 
 
-# ---------------------------------------------------------------------------
 # bootstrap
-# ---------------------------------------------------------------------------
 
 
 def test_primary_ci_contains_point_estimate_in_regular_table():
-    """Basic guard for the noncentral-chi-square interval."""
+    """basic guard for the noncentral-chi-square interval"""
     rng = np.random.default_rng(2)
     a = rng.choice(["A1", "A2", "B1", "B2", "C1", "C2"], 500)
     b = rng.choice(list(range(15)), 500)
@@ -91,21 +79,14 @@ def test_primary_ci_contains_point_estimate_in_regular_table():
 
 @pytest.mark.slow
 def test_ncx2_ci_has_reasonable_simulated_coverage():
-    """measure coverage against an analytically known v.
-
-    the bound is loose because this is a small and fast simulation. the full
-    corpus-specific simulation is written by step 03d.
-    """
+    """measure coverage against an analytically known v"""
     r = ci_coverage_check(n=509, tilt=0.30, n_rep=40, n_boot=80, seed=11)
     assert 0.80 <= r["coverage_ncx2"] <= 1.0, r
 
 
 @pytest.mark.slow
 def test_ncx2_interval_beats_bootstrap_alternatives_near_the_null():
-    """Near the null the resampling intervals can sit above the true V.
-
-    Noncentral inversion should retain zero far more often.
-    """
+    """near the null the resampling intervals can sit above the true v"""
     r = ci_coverage_check(n=600, tilt=0.02, n_rep=40, n_boot=80, seed=12)
     assert r["coverage_ncx2"] > r["coverage_normal"], r
     assert r["coverage_ncx2"] > r["coverage_percentile"], r
@@ -128,8 +109,7 @@ def test_bootstrap_ci_bounds_are_valid_range():
 
 
 def test_bootstrap_bias_is_positive_for_sparse_table():
-    """Documents the pathology that motivated the choice of interval: V is a
-    convex function of chi-square, so resampling inflates it."""
+    """documents the pathology that motivated the choice of interval: v is a"""
     rng = np.random.default_rng(4)
     a = rng.choice(["A1", "A2", "B1", "B2", "C1", "C2"], 400)
     b = rng.choice(list(range(15)), 400)
@@ -137,9 +117,7 @@ def test_bootstrap_bias_is_positive_for_sparse_table():
     assert r["boot_bias"] > 0
 
 
-# ---------------------------------------------------------------------------
 # permutation
-# ---------------------------------------------------------------------------
 
 
 def test_permutation_p_detects_real_association():
@@ -159,8 +137,7 @@ def test_permutation_p_is_uniformish_under_null():
 
 
 def test_permutation_p_never_exactly_zero():
-    """The add-one estimator must never report p = 0, which is what the
-    chi-square asymptotic underflowed to in the original draft."""
+    """the add-one estimator must never report p = 0, which is what the"""
     n = 400
     a = np.array(["A1"] * (n // 2) + ["C2"] * (n // 2))
     b = np.array([0] * (n // 2) + [1] * (n // 2))
@@ -168,9 +145,7 @@ def test_permutation_p_never_exactly_zero():
     assert r["perm_p"] > 0
 
 
-# ---------------------------------------------------------------------------
 # theil's u
-# ---------------------------------------------------------------------------
 
 
 def test_theils_u_self_is_one():
@@ -186,22 +161,18 @@ def test_theils_u_independent_is_near_zero():
 
 
 def test_theils_u_is_asymmetric():
-    """The whole reason for using it: a coarse variable can determine a fine one
-    without the reverse holding."""
+    """the whole reason for using it: a coarse variable can determine a fine one"""
     x = np.array(["A"] * 100 + ["B"] * 100)          # 2 categories
     y = np.array([0] * 50 + [1] * 50 + [2] * 100)    # 3 categories, nested in x
     assert theils_u(x, y) == pytest.approx(1.0, abs=1e-9)
     assert theils_u(y, x) < 1.0
 
 
-# ---------------------------------------------------------------------------
 # cmh: checked against statsmodels on the 2x2xk case
-# ---------------------------------------------------------------------------
 
 
 def test_cmh_matches_statsmodels_on_2x2xk():
-    """Regression test for the covariance bug. The generalised CMH implemented
-    here must reduce exactly to the standard CMH when there are two topics."""
+    """regression test for the covariance bug. the generalised cmh implemented"""
     from statsmodels.stats.contingency_tables import StratifiedTable
 
     rng = np.random.default_rng(0)
@@ -228,8 +199,7 @@ def test_cmh_matches_statsmodels_on_2x2xk():
 
 
 def test_cmh_handles_strata_with_different_topic_sets():
-    """Regression test: strata that do not contain every topic must not crash
-    the pooling step, which was the original failure."""
+    """regression test: strata that do not contain every topic must not crash"""
     rows = []
     rng = np.random.default_rng(1)
     for k, topics in enumerate([[0, 1, 2], [0, 1], [1, 2, 3]]):
@@ -258,14 +228,11 @@ def test_cmh_does_not_reject_under_conditional_independence():
     assert (res["p"] > 0.001).all()
 
 
-# ---------------------------------------------------------------------------
 # residuals, effect sizes, power
-# ---------------------------------------------------------------------------
 
 
 def test_standardised_residuals_sum_structure():
-    """Under independence residuals should be small; a planted cell should
-    stand out sharply."""
+    """under independence residuals should be small; a planted cell should"""
     ct = pd.DataFrame([[100, 100], [100, 100]])
     assert np.allclose(standardised_residuals(ct).to_numpy(), 0.0, atol=1e-9)
     ct2 = pd.DataFrame([[200, 20], [20, 200]])
@@ -290,9 +257,7 @@ def test_epsilon_squared_high_under_strong_effect():
 
 
 def test_power_simulation_holds_nominal_size():
-    """The Monte Carlo critical value must give a type I error at alpha. This
-    is the check that caught the degenerate power results produced when the
-    clipped, bias-corrected V was used as the test statistic."""
+    """the monte carlo critical value must give a type i error at alpha. this"""
     res = minimum_detectable_v(
         level_counts=np.array([80, 2600, 2400, 400, 130, 100]),
         topic_counts=np.full(15, 380),
@@ -303,7 +268,7 @@ def test_power_simulation_holds_nominal_size():
 
 
 def test_power_increases_with_sample_size():
-    """More data must make smaller effects detectable."""
+    """more data must make smaller effects detectable"""
     kw = dict(level_counts=np.array([500, 500]), topic_counts=np.full(4, 250),
               n_sim=200, seed=4)
     small = minimum_detectable_v(n=200, **kw)["min_detectable_v"]
@@ -311,9 +276,7 @@ def test_power_increases_with_sample_size():
     assert large < small
 
 
-# ---------------------------------------------------------------------------
 # length-quartile bins (script 03c)
-# ---------------------------------------------------------------------------
 
 
 def test_length_quartile_bins_four_on_spread_data():
@@ -341,9 +304,7 @@ def test_length_quartile_bins_single_value():
     assert (bins == "Q1").all()
 
 
-# ---------------------------------------------------------------------------
 # label normalisation (config)
-# ---------------------------------------------------------------------------
 
 
 @pytest.mark.parametrize("raw,expected", [
@@ -355,8 +316,7 @@ def test_normalize_level(raw, expected):
 
 
 def test_drift_guard_ignores_ungrouped_rows():
-    """'ungrouped' contains the substring 'grouped'; the guard must not
-    pick the leakage-check row as the reportable topic-mixture F1."""
+    """'ungrouped' contains the substring 'grouped'; the guard must not"""
     import importlib.util
     spec = importlib.util.spec_from_file_location(
         "build_manifest",

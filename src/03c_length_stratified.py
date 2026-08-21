@@ -1,24 +1,4 @@
-"""Step 3c: does topic still carry level information within length strata?
-
-The thesis asks how far the topic–level association in learner data overlaps
-with text length. Script 06 provides a complementary prediction-side analysis.
-Here, documents are binned by word-count
-quartile *within each corpus*, recompute Cramér's V inside each bin, and run
-the CMH test of topic against level stratified by those
-bins.
-
-A null here is not automatically support for the claim. Conditioning on length
-shrinks the variance of level inside each stratum (length predicts level), so
-power drops. Every bin therefore reports a scenario-specific 80% detection
-point for the simulated alternative used here. It is not a universal MDE.
-
-Quartiles are coarse and residual confounding within a bin is possible. This
-is evidence, not proof.
-
-Run:
-    python src/03c_length_stratified.py
-    python src/03c_length_stratified.py --lang en
-"""
+"""step 3c: length-stratified association"""
 
 from __future__ import annotations
 
@@ -60,12 +40,7 @@ def fmt_v(d: dict) -> str:
 
 def placebo_attenuation(sub: pd.DataFrame, n_draws: int = 200,
                         seed: int = RANDOM_SEED) -> dict:
-    """compare length bins with random bins of the same sizes.
-
-    smaller bins reduce power and make the tables sparser. random reassignment
-    shows how much the statistic changes from binning alone. this is a
-    descriptive comparison, not a causal length effect.
-    """
+    """compare length bins with random bins of the same sizes"""
     rng = np.random.default_rng(seed)
     bins = sub["length_bin"].to_numpy()
     levels = sub["cefr_level"].to_numpy()
@@ -95,12 +70,7 @@ def placebo_attenuation(sub: pd.DataFrame, n_draws: int = 200,
 
 
 def try_mnlogit_lrt(sub: pd.DataFrame) -> dict:
-    """Unregularised LRT: level ~ length  vs  level ~ length + topic.
-
-    Dropped (not reported) on non-convergence or separation. A regularised
-    model would make the likelihood-ratio test invalid, so that path is not
-    used as a fallback.
-    """
+    """unregularised lrt: level ~ length  vs  level ~ length + topic"""
     try:
         import statsmodels.api as sm
         from statsmodels.discrete.discrete_model import MNLogit
@@ -151,25 +121,7 @@ def try_mnlogit_lrt(sub: pd.DataFrame) -> dict:
 def interpret_corpus(name: str, overall_v: float, bin_rows: list[dict],
                      cmh: pd.DataFrame, underpowered: bool,
                      mean_decile_v: float = float("nan")) -> list[str]:
-    """Print how much of the association is left after controlling for length.
-
-    No yes/no verdict on purpose. My first version used the rule
-    mean_within_bin_V < 0.5 * unstratified_V, and on MERLIN that came out at
-    .192 against a cutoff of .178 and said the association survives. Deciding
-    something categorical on three hundredths isn't a result.
-
-    So it prints three things instead:
-
-    - how far V drops as the bins get tighter (none -> quartile -> decile)
-    - whether the bins actually control for length. If level still correlates
-      with word count inside a bin, the within-bin V is not length-adjusted.
-    - whether sparse, smaller within-bin tables make the bias correction more
-      influential, especially for deciles.
-
-    Those mechanisms operate in different directions but are not quantified
-    well enough to form mathematical bounds. Script 06 is the complementary
-    prediction-side analysis because it uses length continuously.
-    """
+    """print how much of the association is left after controlling for length"""
     lines = []
     vs = [r["v"] for r in bin_rows if np.isfinite(r["v"])]
     mean_v = float(np.mean(vs)) if vs else float("nan")
@@ -299,14 +251,7 @@ def main() -> None:
                 "word_count_median": float(wc.median()),
                 "level_counts": json.dumps(level_mix, sort_keys=True),
             }
-            # validity check on the stratification itself. a length bin only
-            # controls for length to the extent that length no longer varies
-            # with level inside it. if this residual correlation is still large,
-            # the within-bin v is not a length-free estimate and must not be
-            # read as one. on merlin the quartiles leave residual correlations
-            # as high as 0.53, which is why the graded reading below refuses to
-            # treat a surviving within-bin v as clean evidence of residual
-            # topic signal.
+            # residual length-level correlation inside each bin
             if bsub["cefr_level"].nunique() > 1:
                 r_res, p_res = spearmanr(bsub["level_rank"], bsub["word_count"])
             else:
@@ -355,12 +300,7 @@ def main() -> None:
             this_bins.append(row)
             bin_rows.append(row)
 
-        # finer stratification. quartiles are coarse; if the attenuation of v
-        # continues as the bins tighten, that is consistent with overlap between
-        # length and the topic association. this is reported as a
-        # trend rather than a test, because within-decile n is around 100 and the
-        # bergsma correction can be influential at that size, so the decile
-        # figure is a sensitivity trend rather than an adjusted effect.
+        # finer-bin sensitivity trend, not an adjusted effect
         decile_v = []
         try:
             dec = pd.qcut(sub["word_count"], 10, labels=False, duplicates="drop")
@@ -407,9 +347,7 @@ def main() -> None:
 
         vs = [r["v"] for r in this_bins if np.isfinite(r.get("v", np.nan))]
 
-        # placebo control: same bin sizes, random membership. anything the real
-        # length bins attenuate beyond this is the contrast with random binning;
-        # it is not a causal amount attributable to length.
+        # random-bin placebo with matched bin sizes
         placebo = placebo_attenuation(sub, n_draws=args.n_placebo)
         obs_mean_v = float(np.mean(vs)) if vs else float("nan")
         if placebo["status"] == "ok" and np.isfinite(obs_mean_v) and overall["v"] > 0:

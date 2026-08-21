@@ -8,7 +8,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from features import (  # noqa: E402
+from features import (  # noqa: e402
     CheckedLogisticRegression,
     checked_numeric_matrix,
     normalise_topic_weights,

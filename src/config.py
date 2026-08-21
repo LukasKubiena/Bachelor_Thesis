@@ -1,11 +1,4 @@
-"""Shared settings for the whole pipeline.
-
-Every script imports its paths and constants from here, so if I want to change
-the number of topics or the encoder I only have to change it in one place.
-
-All scripts take --lang (default "de"). Outputs are suffixed with the language
-so the German and English runs don't overwrite each other.
-"""
+"""shared pipeline settings"""
 
 from __future__ import annotations
 
@@ -17,25 +10,23 @@ from pathlib import Path
 
 import numpy as np
 
-# ---------------------------------------------------------------------------
 # paths
-# ---------------------------------------------------------------------------
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-IN_DIR = PROJECT_ROOT / "in"       # input data (not committed, see README)
-OUT_DIR = PROJECT_ROOT / "out"     # everything the scripts produce
+IN_DIR = PROJECT_ROOT / "in"       # local input data
+OUT_DIR = PROJECT_ROOT / "out"     # generated outputs
 
-# older names, kept so i don't have to touch every script at once.
+# compatibility names
 DATA_DIR = IN_DIR
 RESULTS_DIR = OUT_DIR
 
 
 def external_dir(lang: str) -> Path:
-    """Where the gated corpora go after I convert them (see README)."""
+    """where the gated corpora go after i convert them (see readme)"""
     return IN_DIR / "external" / lang
 
 
 def paths(lang: str) -> dict:
-    """The files that get passed between scripts, per language."""
+    """the files that get passed between scripts, per language"""
     return {
         "combined_csv": IN_DIR / f"texts_{lang}.csv",
         "with_topics_csv": IN_DIR / f"texts_{lang}_with_topics.csv",
@@ -54,7 +45,7 @@ def sha256_file(path: Path) -> str:
 
 
 def topic_outputs_problem(lang: str) -> str | None:
-    """Return an explanation if topic outputs do not match the cleaned input."""
+    """return an explanation if topic outputs do not match the cleaned input"""
     p = paths(lang)
     needed = (
         p["combined_csv"], p["with_topics_csv"], p["doc_topic_matrix"],
@@ -91,48 +82,31 @@ def topic_outputs_problem(lang: str) -> str | None:
     return None
 
 
-# ---------------------------------------------------------------------------
 # data sources
-# ---------------------------------------------------------------------------
-# these download automatically from huggingface. the gated corpora (deplain-apa
-# and apa-lha) have to be requested separately and converted with 00_convert_raw.py.
+# open corpora from huggingface; gated corpora converted separately
 OPEN_HF_DATASETS = {
     "de": [
         "UniversalCEFR/merlin_de",     # learner exam essays
-        "UniversalCEFR/elg_cefr_de",   # manually CEFR-annotated reference texts
+        "UniversalCEFR/elg_cefr_de",   # manually cefr-annotated reference texts
     ],
     "en": [
         "UniversalCEFR/icle500_en",    # learner essays
         "UniversalCEFR/cefr_asag_en",  # learner short answers
-        "UniversalCEFR/elg_cefr_en",    # manually CEFR-annotated reference texts
+        "UniversalCEFR/elg_cefr_en",    # manually cefr-annotated reference texts
     ],
 }
 
-# ---------------------------------------------------------------------------
 # cefr levels
-# ---------------------------------------------------------------------------
 LEVEL_ORDER = ["A1", "A2", "B1", "B2", "C1", "C2"]
 
 
-# sub-level notations that the cefr treats as the same band. the companion
-# volume (council of europe, 2020, section 2.6) distinguishes "criterion levels"
-# (a2, or a2.1) from "plus levels" (a2+, or a2.2), so a2+ and a2.2 mean the same
-# thing and both sit inside a2. my analysis works at the six-level granularity,
-# so i map both notations down to the base level. that is a real simplification
-# and i count how often it fires (see 01_load_data.py) rather than let it happen
-# silently.
+# plus/sublevels collapsed to the six base levels
+# mapping counts saved by 01_load_data.py
 _SUBLEVEL = re.compile(r"^(PRE-A1|A1|A2|B1|B2|C1|C2)\s*(\+|\.\d+)?$")
 
 
 def normalize_level(raw) -> str | None:
-    """Map a raw label onto one of the six Common Reference Levels.
-
-    'a1', 'A1+', 'A1.2' and ' A1 ' all become 'A1'. Pre-A1, which the Companion
-    Volume added in 2020, has no place in the six-level scheme I use, so it is
-    returned as its own string and dropped downstream by the caller, but at
-    least it is distinguishable from a parse failure. Anything else (a bare 'A',
-    a range like 'B1-B2', an empty cell) returns None.
-    """
+    """map a raw label onto one of the six common reference levels"""
     if raw is None:
         return None
     level = str(raw).strip().upper()
@@ -143,26 +117,21 @@ def normalize_level(raw) -> str | None:
     return base if base in LEVEL_ORDER else None
 
 
-# ---------------------------------------------------------------------------
 # model settings
-# ---------------------------------------------------------------------------
-# multilingual so german and english go through the same encoder, and small
-# enough to run on a laptop cpu. alternatives are tested in 08b.
+# shared multilingual encoder; alternatives in 08b
 ENCODER = "paraphrase-multilingual-MiniLM-L12-v2"
 
-N_TOPICS = 15      # override with --n-topics
-MIN_TOKENS = 10    # drop very short fragments, they carry no topic signal
+N_TOPICS = 15      # --n-topics override
+MIN_TOKENS = 10    # minimum topic-bearing length
 RANDOM_SEED = 42
 
-# ---------------------------------------------------------------------------
 # numbers copied from imperial et al. (2025), table 3
-# ---------------------------------------------------------------------------
-# these are weighted f1, which is the paper's primary metric, not macro f1.
-# column order in their table is en es de nl cs it fr et pt ar hi ru cy.
+# weighted f1 from the paper's primary metric
+# column order in their table is en es de nl cs it fr et pt ar hi ru cy
 XLMR_WEIGHTED_F1 = {"de": 73.2, "en": 75.5}
 MOST_FREQUENT_WEIGHTED_F1 = {"de": 26.8, "en": 7.39}
 
-# the rest of the same column, used for the comparison in section 4.5.
+# remaining section 4.5 reference values
 REFERENCE_LADDER = {
     "de": {"most_frequent_class": 26.8, "logregr_topfeats": 52.5,
            "randforest_allfeats": 65.4, "eurobert": 70.6,
@@ -171,12 +140,11 @@ REFERENCE_LADDER = {
            "randforest_allfeats": 63.4, "eurobert": 74.6,
            "modernbert": 75.8, "xlmr": 75.5},
 }
-# careful with english: their floor is 7.39 but mine is 14.7 on a different
-# split, so the two aren't interchangeable. script 06 prints both.
+# english floors use different splits
 
 
 def log_environment() -> dict:
-    """Package versions, saved into the manifest so results are traceable."""
+    """package versions, saved into the manifest so results are traceable"""
     import platform
 
     import numpy

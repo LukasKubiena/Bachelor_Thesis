@@ -1,24 +1,4 @@
-"""Step 2: fit the KeyNMF topic model.
-
-The model uses text only and does not receive the CEFR labels. It is fitted once
-to all documents in a language, so later predictive analyses are transductive:
-held-out documents helped define the topic space even though their labels were
-not used.
-
-Run:
-    python src/02_topic_model.py                       # German, 15 topics
-    python src/02_topic_model.py --lang en             # English
-    python src/02_topic_model.py --n-topics 20         # robustness check
-
-Outputs (per language):
-    out/doc_topic_matrix_<lang>.npy      raw NMF document-topic loadings
-    out/topics_top_words_<lang>.csv      top 15 words per topic
-    in/texts_<lang>_with_topics.csv      input table with topic id and strength
-
-The raw loadings are not probabilities and their rows do not sum to one.
-Predictive scripts use L1-normalised relative weights for the main analysis;
-script 06 also checks the raw loadings.
-"""
+"""step 2: keynmf topic model"""
 
 import argparse
 import json
@@ -40,7 +20,7 @@ from features import checked_numeric_matrix, vectorizer_stopwords
 
 
 def get_top_words(model, top_k: int = 15) -> pd.DataFrame:
-    """Extract the top_k highest-weighted words for each topic."""
+    """extract the top_k highest-weighted words for each topic"""
     vocab = np.asarray(model.get_vocab())
     rows = []
     for topic_id, weights in enumerate(model.components_):
@@ -66,12 +46,12 @@ def main() -> None:
     corpus = df["text"].astype(str).tolist()
     print(f"Fitting KeyNMF with {args.n_topics} topics on {len(corpus)} {args.lang} texts ...")
 
-    # stopwords are excluded from topic keywords, not from document embeddings
-    # this does not remove all style or complexity information from the topics
+    # keyword stopwords only; embeddings unchanged
+    # remaining style and complexity signal
     stop = vectorizer_stopwords(args.lang)
     vectorizer = CountVectorizer(
         stop_words=stop,
-        min_df=5,           # a word must appear in at least 5 documents
+        min_df=5,           # minimum document frequency
         lowercase=True,
     )
 
@@ -92,10 +72,10 @@ def main() -> None:
             f"expected {(len(corpus), args.n_topics)}"
         )
 
-    # human-readable overview in the terminal.
+    # topic preview
     model.print_topics()
 
-    # persist everything the later scripts need.
+    # downstream files
     np.save(p["doc_topic_matrix"], doc_topic)
     print(f"Saved {p['doc_topic_matrix']}  shape={doc_topic.shape}")
 
@@ -103,9 +83,7 @@ def main() -> None:
     top_words.to_csv(p["topic_words_csv"], index=False)
     print(f"Saved {p['topic_words_csv']}")
 
-    # a document with no surviving keywords gets an all-zero row, and argmax
-    # would silently file it under topic 0. one german document does this. i
-    # report it rather than let it disappear into the largest topic.
+    # keep all-zero rows out of topic 0
     empty = int((doc_topic.max(axis=1) == 0).sum())
     if empty:
         print(f"WARNING: {empty} document(s) have an all-zero topic vector "

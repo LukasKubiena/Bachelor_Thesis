@@ -1,36 +1,4 @@
-"""Step 6: compare topic against text length and surface predictors of CEFR.
-
-length is already a known shortcut in this literature. the feature blocks use
-the same cross-validation so their predictive scores can be compared directly.
-
-Five main feature sets, all on identical folds:
-    majority          the floor
-    word count        the minimal length-only baseline
-    surface           log tokens, sentence count, tokens/sentence, mean word length
-    topic             the relative KeyNMF topic weights
-    surface + topic   does topic improve prediction beyond the surface block?
-
-Only log tokens and sentence count are length measures; tokens per sentence and
-mean word length are complexity proxies. The four-feature block is therefore
-called "surface features", not "length".
-
-Folds are grouped on ``cv_group``, the transitive closure of known parallel
-versions and near-duplicate links. With ordinary stratified folds, two copies
-or versions can otherwise appear in training and test. Grouped and ungrouped
-numbers are both retained so the sensitivity to this choice is visible.
-
-Run:
-    python src/06_length_benchmark.py
-    python src/06_length_benchmark.py --dataset merlin_de
-    python src/06_length_benchmark.py --lang en
-
-Writes length_benchmark_<tag>.csv and .json, per_level_report_<tag>.csv and
-length_vs_level_<tag>.csv to out/.
-
-KeyNMF was fitted once to all unlabelled documents before cross-validation.
-The topic results are therefore transductive. The surface features require no
-fitting, so this is not a fully symmetric out-of-sample comparison.
-"""
+"""step 6: length, surface, and topic benchmarks"""
 
 from __future__ import annotations
 
@@ -79,18 +47,14 @@ N_SPLITS = 5
 N_REPEATS = 5
 N_PERM_NULL = 40
 N_BOOT = 600
-# only these three get bootstrap cis, since each one costs n_boot f1_score
-# calls and these are the rows that end up in the thesis table.
+# bootstrap cis for thesis rows only
 CI_FEATURE_SETS = ("word count only", "surface features", "topic only", "surface + topic")
 
-# the imperial et al. (2025) reference numbers live in config.py so there's
-# only one place they can be wrong.
+# imperial et al. values from config.py
 
 
 
-# ---------------------------------------------------------------------------
 # metrics
-# ---------------------------------------------------------------------------
 
 
 def adjacent_accuracy(y_true, y_pred) -> float:
@@ -101,8 +65,7 @@ def adjacent_accuracy(y_true, y_pred) -> float:
 
 
 def qwk(y_true, y_pred) -> float:
-    """Quadratic weighted kappa. CEFR is ordinal, and this is also the metric
-    Lyngbaek and Kristensen-McLachlan (2026) report."""
+    """quadratic weighted kappa. cefr is ordinal, and this is also the metric"""
     idx = {l: i for i, l in enumerate(LEVEL_ORDER)}
     t = [idx[l] for l in y_true]
     p = [idx[l] for l in y_pred]
@@ -120,11 +83,7 @@ def all_metrics(y_true, y_pred) -> dict:
 
 
 def bootstrap_metric_ci(y_true, y_pred, metric_fn, n_boot=N_BOOT, seed=RANDOM_SEED):
-    """percentile interval over the pooled out-of-fold predictions.
-
-    this covers resampling of the predictions, while repeated splits are
-    reported separately.
-    """
+    """percentile interval over the pooled out-of-fold predictions"""
     rng = np.random.default_rng(seed)
     y_true = np.asarray(y_true)
     y_pred = np.asarray(y_pred)
@@ -139,9 +98,7 @@ def bootstrap_metric_ci(y_true, y_pred, metric_fn, n_boot=N_BOOT, seed=RANDOM_SE
     return float(lo), float(hi)
 
 
-# ---------------------------------------------------------------------------
 # model runner
-# ---------------------------------------------------------------------------
 
 
 def make_lr():
@@ -183,7 +140,7 @@ def main() -> None:
             sys.exit(f"No rows for '{args.dataset}'. Have: {sorted(df['dataset'].unique())}")
         df, doc_topic = df[keep].reset_index(drop=True), doc_topic[keep]
 
-    # stratified cv needs every class present at least n_splits times.
+    # minimum class size for stratified cv
     counts = df["cefr_level"].value_counts()
     rare = counts[counts < N_SPLITS].index.tolist()
     if rare:
@@ -214,9 +171,7 @@ def main() -> None:
               "fold-assignment noise between two different partitions, NOT a "
               "leak, and must be described that way in the text.")
 
-    # ------------------------------------------------------------------
-    # descriptive: is length actually related to level in this data?
-    # ------------------------------------------------------------------
+    # length-level association
     from scipy.stats import spearmanr
 
     rank = {l: i for i, l in enumerate(LEVEL_ORDER)}
@@ -229,9 +184,7 @@ def main() -> None:
     desc.columns = ["n", "mean", "median", "q25", "q75"]
     desc.to_csv(RESULTS_DIR / f"length_vs_level_{tag}.csv")
 
-    # ------------------------------------------------------------------
     # feature sets
-    # ------------------------------------------------------------------
     Xsurface = surface_features(df["text"]).to_numpy()
     Xtop_raw = doc_topic
     Xtop = normalise_topic_weights(doc_topic)
@@ -242,9 +195,7 @@ def main() -> None:
 
     feature_sets = {
         "majority class (floor)": (np.zeros((len(y), 1)), DummyClassifier(strategy="most_frequent")),
-        # word count on its own. worth separating out: in a corpus written to a
-        # fixed length it is uninformative while the complexity features are not,
-        # so reporting only the four-feature block hides that contrast.
+        # word count separate from complexity features
         "word count only": (word_count_feature(df["word_count"]), make_lr()),
         "surface features": (Xsurface, make_lr()),
         "topic only": (Xtop, make_lr()),
@@ -257,15 +208,12 @@ def main() -> None:
         ),
         "topic only (gradient boosting)": (Xtop, HistGradientBoostingClassifier(
             random_state=RANDOM_SEED)),
-        # sensitivity check only. raw row magnitude partly tracks how many
-        # keywords a document produced, so it is not the main topic construct.
+        # raw-loading sensitivity only
         "topic only (raw loadings)": (Xtop_raw, make_lr()),
         "surface + topic (raw loadings)": (Xboth_raw, make_lr()),
     }
 
-    # ------------------------------------------------------------------
-    # grouped vs ungrouped, to expose the leakage
-    # ------------------------------------------------------------------
+    # grouped and ungrouped splits
     rows = []
     preds = {}
     for grouped in (False, True):
@@ -295,7 +243,7 @@ def main() -> None:
     print(f"\n{label} (ungrouped minus grouped, weighted F1):")
     print(leak.round(4).to_string())
 
-    # raw vs row-normalised, stated plainly so it does not have to be inferred.
+    # raw vs row-normalised loadings
     g = res[res.cv == "grouped (cv_group)"].set_index("features")
     if {"topic only", "topic only (raw loadings)"} <= set(g.index):
         print("\n--- Raw-loading sensitivity (raw minus L1-normalised main model) ---")
@@ -308,9 +256,7 @@ def main() -> None:
 
     res.to_csv(RESULTS_DIR / f"length_benchmark_{tag}.csv", index=False)
 
-    # ------------------------------------------------------------------
-    # uncertainty on the grouped numbers, which are the reportable ones
-    # ------------------------------------------------------------------
+    # grouped-score uncertainty
     print("\n--- Bootstrap 95% CIs on the grouped results ---")
     ci_rows = []
     for name in CI_FEATURE_SETS:
@@ -325,9 +271,7 @@ def main() -> None:
     ci_df = pd.DataFrame(ci_rows)
     print(ci_df.to_string(index=False, float_format=lambda x: f"{x:.3f}"))
 
-    # ------------------------------------------------------------------
-    # does topic improve prediction on top of the surface block?
-    # ------------------------------------------------------------------
+    # topic gain over surface features
     print("\n--- Incremental contribution of topic over surface features ---")
     print(f"Repeated CV: {N_SPLITS} folds x {N_REPEATS} seeds, grouped on cv_group.")
     deltas = {"macro_f1": [], "weighted_f1": [], "qwk": []}
@@ -360,9 +304,7 @@ def main() -> None:
     print("that metric supports improvement from the transductive topic block.")
     print("A mixed-sign or zero-crossing range does not. None is a causal decomposition.")
 
-    # ------------------------------------------------------------------
-    # is topic-only above chance at all?
-    # ------------------------------------------------------------------
+    # topic-only permutation check
     obs_macro = f1_score(y, preds[("grouped (cv_group)", "topic only")], average="macro")
     if args.n_perm > 0:
         print(f"\n--- Permutation test against the label-shuffled null "
@@ -389,9 +331,7 @@ def main() -> None:
         p_emp = np.nan
         print("\n--- Permutation test skipped (--n-perm 0) ---")
 
-    # ------------------------------------------------------------------
     # per-level breakdown
-    # ------------------------------------------------------------------
     print("\n--- Per-level performance, topic only, grouped CV ---")
     rep = classification_report(y, preds[("grouped (cv_group)", "topic only")],
                                 labels=levels, output_dict=True, zero_division=0)
@@ -405,9 +345,7 @@ def main() -> None:
         print(f"\nLevels the topic-only model NEVER predicts: {never}")
     per_level.to_csv(RESULTS_DIR / f"per_level_report_{tag}.csv")
 
-    # ------------------------------------------------------------------
-    # calibration against the reported models
-    # ------------------------------------------------------------------
+    # reported-model calibration
     out = {"tag": tag, "n": int(len(df)),
            "class_support": support.to_dict(),
            "spearman_length_level": {"rho": float(lr_rho), "p": float(lr_p)},
@@ -463,9 +401,7 @@ def main() -> None:
         print(f"\n--- Calibration skipped: no reference numbers for '{lang}' in "
               "config.REFERENCE_LADDER ---")
 
-    # concise, regenerated prose-facing summary. the manifest used to read an
-    # old hand-created .txt file that this script never updated, allowing stale
-    # numbers back into the thesis even when the csv/json were current.
+    # regenerated summary for the manifest
     summary_lines = [
         f"LENGTH VS TOPIC BENCHMARK ({tag}), n={len(df)}",
         "Grouped 5-fold CV on cv_group; topic features are transductive.",

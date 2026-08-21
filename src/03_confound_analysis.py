@@ -1,9 +1,4 @@
-"""Step 3 thin pass: topic summary table + labelled heatmaps.
-
-Extended association statistics (bootstrap CIs, CMH, residuals, power) live in
-src/03b_association_extended.py and write association_extended_*.{txt,json}.
-This script produces the topic interpretability table used in the results.
-"""
+"""step 3: topic summaries and heatmaps"""
 
 from __future__ import annotations
 
@@ -21,8 +16,8 @@ from config import LEVEL_ORDER, OPEN_HF_DATASETS, RESULTS_DIR, paths, topic_outp
 from plotting import savefig, set_style, topic_axis_labels
 from stats_utils import cramers_v
 
-# checked against the highest-strength documents, not just the keywords.
-# keeping the labels here makes the tables and figures use the same wording.
+# labels checked against high-strength documents
+# shared table and figure wording
 PROVISIONAL_LABELS_DE = {
     0: "Austrian regional Covid measures",
     1: "Informal greeting and invitation letters",

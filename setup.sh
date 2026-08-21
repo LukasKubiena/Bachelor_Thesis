@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# sets up the virtual environment and installs the requirements
-# usage:  bash setup.sh
-#         source env/bin/activate
+# environment setup
+# usage: bash setup.sh
+# activation: source env/bin/activate
 
 set -euo pipefail
 cd "$(dirname "$0")"

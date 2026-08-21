@@ -1,8 +1,8 @@
-# input data is not committed. see readme for how to get it.
+# local input data
 in/*
 !in/README.md
 
-# generated outputs. sample results are committed by force-adding, see readme.
+# generated arrays
 out/*.npy
 
 # python

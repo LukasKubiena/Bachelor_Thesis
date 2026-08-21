@@ -1,31 +1,4 @@
-"""Step 7c: the topic-overlap test again, but inside a single corpus.
-
-Script 07 does this on the pooled data, which turns out to be confounded.
-Topics here are strong corpus signatures (V = .45 between topic and corpus), so
-holding out a set of topics also holds out part of a corpus. The diagnostic
-below shows it: in the pooled five-fold split one test fold ends up with no
-MERLIN documents at all, when MERLIN is 18% of the data. So that drop mixes
-topic overlap with a change in corpus composition and I can't attribute it to
-topic.
-
-Running the same comparison inside one corpus holds corpus membership and label
-meaning constant. The split regimes still differ in class balance and fold
-difficulty, so their difference is a stress test rather than an estimate of a
-topic-overlap effect. Four feature sets make that visible:
-
-    topic mixture      reference expected to be sensitive to held-out topics
-    full text TF-IDF   lexical classifier stress test
-    word count only    minimal non-topic control
-    surface features   the same control as script 06's baseline
-
-Run:
-    python src/07c_topic_overlap_within_corpus.py                      # MERLIN
-    python src/07c_topic_overlap_within_corpus.py --dataset elg_cefr_de
-    python src/07c_topic_overlap_within_corpus.py --lang en --dataset icle500_en
-
-Writes topic_overlap_within_<tag>.csv and topic_overlap_diagnostic_<lang>.csv
-to out/.
-"""
+"""step 7c: within-corpus topic-overlap stress test"""
 
 from __future__ import annotations
 
@@ -70,17 +43,12 @@ def lr_dense():
 
 
 def topic_pair_components(df: pd.DataFrame) -> tuple[np.ndarray, int, int]:
-    """Merge topics linked by a parallel or near-duplicate family."""
+    """merge topics linked by a parallel or near-duplicate family"""
     return topic_linked_components(df["topic"], validation_groups(df))
 
 
 def pooled_skew_diagnostic(df: pd.DataFrame, lang: str) -> pd.DataFrame:
-    """Quantify how far topic-grouped folds distort the corpus mix.
-
-    Reported as total variation distance between each test fold's corpus
-    distribution and the overall one. Anything much above zero means the pooled
-    topic-stratified estimate is contaminated by corpus shift.
-    """
+    """quantify how far topic-grouped folds distort the corpus mix"""
     base = df["dataset"].value_counts(normalize=True)
     rows = []
     for i, (_, te) in enumerate(
@@ -173,9 +141,9 @@ def main() -> None:
     print("as the lexical model. Read this as the difference between two split regimes,")
     print("a stress test rather than a clean causal estimate.\n")
 
-    # fit the vocabulary and idf weights inside each training fold
+    # fold-specific vocabulary and idf
     Xtf = df["text"].astype(str).tolist()
-    # keep word count separate from the four-feature surface baseline
+    # separate word-count control
     Xwc = word_count_feature(df["word_count"])
     Xsurf = surface_features(df["text"]).to_numpy()
 

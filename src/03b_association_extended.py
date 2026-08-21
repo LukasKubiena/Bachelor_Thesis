@@ -1,25 +1,4 @@
-"""Step 3b: the topic-level association with uncertainty attached.
-
-Script 03 gives the point estimates. This script adds everything I need to
-report them properly:
-
-  - approximate noncentral-chi-square intervals on every Cramer's V, with
-    bootstrap uncertainty diagnostics retained for comparison
-  - permutation p-values (the chi-square p underflows to 0 on these tables)
-  - V recomputed at a matched sample size, so the ranking isn't a size artefact
-  - a power analysis for the two news corpora, where I expect a null
-  - Cochran-Mantel-Haenszel: does the association survive controlling for corpus?
-  - standardised residuals, i.e. which topics go with which levels
-  - AMI, Theil's U and an ordinal effect size alongside V
-
-Run:
-    python src/03b_association_extended.py             # German
-    python src/03b_association_extended.py --lang en   # English
-
-Writes to out/: association_extended_<lang>.txt and .json,
-cramers_v_by_corpus_<lang>.csv, residuals_level_topic_<lang>.csv,
-top_associations_<lang>.csv (plus MERLIN-only versions).
-"""
+"""step 3b: topic-level association"""
 
 from __future__ import annotations
 
@@ -51,7 +30,7 @@ N_SUBSAMPLE_REPS = 200
 
 
 def topic_labels(lang: str) -> dict:
-    """number -> 'n: kw/kw/kw', plus the hand-written label when available."""
+    """number -> 'n: kw/kw/kw', plus the hand-written label when available"""
     p = paths(lang)
     words = pd.read_csv(p["topic_words_csv"]).set_index("topic")["top_words"]
     labels = {t: "/".join(str(w).split(", ")[:3]) for t, w in words.items()}
@@ -108,9 +87,7 @@ def main() -> None:
     say(f"bootstrap diagnostic draws = {args.n_boot:,}, permutations = {args.n_perm:,}")
     say("=" * 78)
 
-    # ------------------------------------------------------------------
-    # 1. overall association, with uncertainty
-    # ------------------------------------------------------------------
+    # 1. overall association
     say("\n--- 1. Topic vs CEFR level, all data ---")
     b_all = bootstrap_v(df["cefr_level"], df["topic"], n_boot=args.n_boot)
     perm_all = permutation_p(df["cefr_level"], df["topic"], n_perm=args.n_perm)
@@ -131,9 +108,7 @@ def main() -> None:
     out["overall"] = {**b_all, **perm_all, **info_all,
                       "epsilon_squared": eps2, "kruskal_h": h_stat, "kruskal_p": kw_p}
 
-    # ------------------------------------------------------------------
-    # 2. topic vs source corpus
-    # ------------------------------------------------------------------
+    # 2. topic and source corpus
     say("\n--- 2. Topic vs source corpus (the competing explanation) ---")
     b_src = bootstrap_v(df["dataset"], df["topic"], n_boot=args.n_boot)
     perm_src = permutation_p(df["dataset"], df["topic"], n_perm=args.n_perm)
@@ -144,9 +119,7 @@ def main() -> None:
     say(f"CIs overlap: {overlap}")
     out["source"] = {**b_src, **perm_src, "ci_overlaps_level": bool(overlap)}
 
-    # ------------------------------------------------------------------
-    # 3. within each corpus, with cis, permutation p, matched n, and power
-    # ------------------------------------------------------------------
+    # 3. within-corpus estimates
     say("\n--- 3. Topic vs level WITHIN each corpus ---")
     sizes = df.groupby("dataset").size()
     n_match = int(sizes.min())
@@ -217,14 +190,7 @@ def main() -> None:
     out["by_corpus"] = corpus_df.to_dict(orient="records")
     out["matched_n"] = n_match
 
-    # does the ranking survive matched n?
-    #
-    # exact rank equality is the wrong test here: the two parallel news corpora
-    # are both statistically indistinguishable from zero, so which of them comes
-    # out fractionally higher is noise and flipping them means nothing. the
-    # claim the thesis actually makes is the grouping, namely that the learner
-    # corpus is highest, the reference corpus intermediate, and both parallel
-    # news corpora near zero. that is what gets tested.
+    # matched-n check for the learner > reference > news pattern
     from scipy.stats import spearmanr
 
     ranked_raw = list(corpus_df.sort_values("v", ascending=False)["corpus"])
@@ -252,9 +218,7 @@ def main() -> None:
     out["ranking_spearman_rho"] = float(rho)
     out["grouping_holds_at_matched_n"] = grouping_holds
 
-    # ------------------------------------------------------------------
-    # 4. conditional independence given corpus (cmh)
-    # ------------------------------------------------------------------
+    # 4. corpus-stratified cmh
     say("\n--- 4. Cochran-Mantel-Haenszel: topic vs level, conditioning on corpus ---")
     say("Null: within corpora, topic carries no information about level.")
     cmh = cmh_by_level(df)
@@ -273,9 +237,7 @@ def main() -> None:
     else:
         say("  CMH not computable on this table shape.")
 
-    # ------------------------------------------------------------------
-    # 5. standardised residuals: which topic goes with which level
-    # ------------------------------------------------------------------
+    # 5. topic-level residuals
     say("\n--- 5. Standardised residuals (which topics go with which levels) ---")
 
     def residual_report(frame: pd.DataFrame, tag: str) -> pd.DataFrame:
@@ -338,9 +300,7 @@ def main() -> None:
             mt_sorted[mt_sorted["std_residual"] > 0].head(10).to_dict(orient="records")
         )
 
-    # ------------------------------------------------------------------
-    # 6. sensitivity to topic assignment confidence
-    # ------------------------------------------------------------------
+    # 6. assignment-confidence sensitivity
     if "topic_strength" in df.columns:
         say("\n--- 6. Sensitivity to topic assignment confidence ---")
         med = df["topic_strength"].median()
@@ -356,9 +316,7 @@ def main() -> None:
         say("documents dilute the association.")
         out["confident_half"] = b_conf
 
-    # ------------------------------------------------------------------
-    # write outputs
-    # ------------------------------------------------------------------
+    # outputs
     txt = RESULTS_DIR / f"association_extended_{lang}.txt"
     txt.write_text("\n".join(lines), encoding="utf-8")
 

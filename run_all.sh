@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# runs the full analysis for one language
+# full analysis for one language
 # usage: bash run_all.sh [de|en]
 #
-# run setup.sh first; the topic and sensitivity models take the most time
+# setup required; topic models are slow
 set -euo pipefail
 cd "$(dirname "$0")"
 LANG_ARG="${1:-de}"
@@ -49,7 +49,7 @@ if [[ "$LANG_ARG" == "de" ]]; then
   "$PYTHON" src/04_topic_only_baseline.py --lang de --dataset merlin_de
   "$PYTHON" src/04_topic_only_baseline.py --lang de --dataset elg_cefr_de
   "$PYTHON" src/06_length_benchmark.py --lang de --dataset merlin_de
-  # use the same surface baseline for every german corpus
+  # shared german surface baseline
   "$PYTHON" src/06_length_benchmark.py --lang de --dataset elg_cefr_de --n-perm 0
   "$PYTHON" src/06_length_benchmark.py --lang de --dataset deplain_apa_doc --n-perm 0
   "$PYTHON" src/06_length_benchmark.py --lang de --dataset apa_lha --n-perm 0
@@ -63,7 +63,7 @@ else
   "$PYTHON" src/07c_topic_overlap_within_corpus.py --lang en --dataset elg_cefr_en --skip-diagnostic
 fi
 
-# repeat a few scripts to check that seeded results stay the same
+# seeded repeatability checks
 echo "=== Determinism check (03, 04, 06, 07) ==="
 CHECK_DIR="$(mktemp -d)"
 trap 'rm -rf "$CHECK_DIR"' EXIT
@@ -73,7 +73,7 @@ cp "out/length_benchmark_${LANG_ARG}.csv" "$CHECK_DIR/len_a.csv"
 cp "out/length_benchmark_${LANG_ARG}.json" "$CHECK_DIR/len_a.json"
 cp "out/cross_corpus_transfer_${LANG_ARG}.csv" "$CHECK_DIR/xfer_a.csv"
 "$PYTHON" src/03_confound_analysis.py --lang "$LANG_ARG" > /dev/null
-# skip slow permutation tests during this check and restore their json result
+# fast repeat check with restored permutation output
 "$PYTHON" src/04_topic_only_baseline.py --lang "$LANG_ARG" --skip-perm > /dev/null
 "$PYTHON" src/06_length_benchmark.py --lang "$LANG_ARG" --n-perm 0 > /dev/null
 "$PYTHON" src/07_cross_corpus.py --lang "$LANG_ARG" > /dev/null
@@ -98,7 +98,7 @@ cp "$CHECK_DIR/len_a.json" "out/length_benchmark_${LANG_ARG}.json"
 echo "Determinism OK"
 
 echo "=== Unit tests ==="
-# stop before figures and manifests if a test fails
+# tests before figures and manifests
 "$PYTHON" -m pytest -q tests/
 
 "$PYTHON" src/10_figures.py --lang "$LANG_ARG"

@@ -1,14 +1,4 @@
-"""Step 7b: independent replication of the pooled split stress test.
-
-Recomputes the two rows produced by step 7 with the same estimators and folds,
-then checks them against step 7's authoritative table. Keeping an independent
-implementation catches accidental drift, while writing to a separate file
-prevents this diagnostic from overwriting the primary result. The gap remains
-descriptive: grouping also changes class and corpus composition.
-
-Run:
-    python src/07b_topic_stratified.py
-"""
+"""step 7b: split stress-test replication"""
 
 from __future__ import annotations
 
@@ -112,7 +102,7 @@ def main() -> None:
     rows.append(cv_eval("topic_mixture_topic_grouped", doc_topic, y, groups=topics))
 
     print("TF-IDF + LR, random stratified CV ...")
-    # refit the vectorizer inside each training fold
+    # fold-specific vectorizer
     texts = df["text"].astype(str).to_numpy()
     def _tfidf_lr():
         return make_pipeline(
@@ -146,7 +136,7 @@ def main() -> None:
     out = pd.DataFrame(rows)
     out.to_csv(replication_path, index=False)
 
-    # check the independent result against step 7
+    # comparison with step 7
     if authoritative_path.exists():
         authoritative = pd.read_csv(authoritative_path).set_index("features")
         comparisons = {

@@ -1,12 +1,4 @@
-"""Step 1c: Near-duplicate audit across corpora.
-
-DEplain-APA and APA-LHA are both APA news simplified by the same agency.
-If the same article appears in both, n is inflated and the corpora are not
-independent.
-
-Run:
-    python src/01c_near_duplicates.py
-"""
+"""step 1c: near-duplicate audit"""
 
 from __future__ import annotations
 
@@ -30,7 +22,7 @@ def main() -> None:
     args = parser.parse_args()
     p = paths(args.lang)
 
-    # always start from the cleaned table from step 1
+    # clean step 1 input
     src = p["combined_csv"]
     if not src.exists():
         sys.exit(f"Run src/01_load_data.py --lang {args.lang} first.")
@@ -44,7 +36,7 @@ def main() -> None:
     out = RESULTS_DIR / f"near_duplicates_{args.lang}.csv"
     report[ordered].to_csv(out, index=False) if len(report) else pd.DataFrame(columns=cols).to_csv(out, index=False)
 
-    # merge known pairs and near-copies into one validation family
+    # merged validation families
     df["cv_group"] = merged_validation_groups(df, report)
     p["combined_csv"].write_text(df.to_csv(index=False), encoding="utf-8")
     n_cv_groups = int(df["cv_group"].nunique())
@@ -95,7 +87,7 @@ def main() -> None:
               f"{args.threshold}: 0  (share of DEplain's {n_deplain} documents: 0.000)")
         print("No cross-corpus near-duplicates at this threshold.")
 
-    # check every deplain text against its closest apa-lha text
+    # nearest deplain–apa-lha matches
     bip_max = ""
     bip_n85 = 0
     bip_mismatch = 0

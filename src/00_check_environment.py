@@ -1,11 +1,4 @@
-"""Fail before analysis if the active environment differs from requirements.
-
-Numerical model output is not reproducible across arbitrary NumPy and
-scikit-learn combinations. In particular, the old local ``.venv`` paired
-NumPy 2.0 with scikit-learn 1.6 and emitted overflow warnings during otherwise
-ordinary logistic-regression fits. The pipeline must not overwrite the
-versioned outputs in that state.
-"""
+"""environment version check"""
 
 from __future__ import annotations
 

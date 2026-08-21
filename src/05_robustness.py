@@ -1,23 +1,4 @@
-"""Step 5: Robustness of the main results to the number of topics.
-
-The topic count is the one free parameter of the pipeline. This script refits
-the topic model at several settings (default 10, 15, 20) and recomputes the
-two headline numbers at each: the within-source Cramér's V values (Half 1)
-and the topic-mixture macro F1 (Half 2). If the conclusions hold across
-settings, they do not depend on the choice of 15.
-
-Runs standalone and does NOT overwrite the main pipeline outputs. Documents
-are embedded once and the embeddings reused across settings, so the extra
-cost per setting is small.
-
-Run:
-    python src/05_robustness.py
-    python src/05_robustness.py --lang en --n-topics 10 20 30
-
-Output:
-    out/robustness_<lang>.csv   one row per (n_topics, corpus) with V,
-                                    plus one row per n_topics with macro F1
-"""
+"""step 5: topic-count robustness"""
 
 import argparse
 import sys
@@ -98,14 +79,7 @@ def main() -> None:
             rows.append({"n_topics": n, "measure": f"cramers_v_{name}", "value": round(v, 3), "p": f"{pval:.1e}"})
             print(f"  V ({name}): {v:.3f}")
 
-        # half 2: topic-mixture performance.
-        #
-        # this must use the identical estimator and fold scheme as script 06,
-        # otherwise the robustness section reports a different number for k = 15
-        # than the results section does for the same model on the same data, and
-        # a reader comparing the two tables sees a contradiction. specifically:
-        # features are standardised, and folds are grouped on merged validation
-        # families so parallel or near-duplicate texts never straddle a split.
+        # half 2: script 06 estimator and grouped folds
         counts = df["cefr_level"].value_counts()
         keep = ~df["cefr_level"].isin(counts[counts < N_SPLITS].index)
         y = df.loc[keep, "cefr_level"].to_numpy()

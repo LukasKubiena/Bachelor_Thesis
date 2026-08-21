@@ -1,8 +1,4 @@
-"""Step 8: Justify k empirically (coherence, diversity, reconstruction) + seed stability.
-
-Run:
-    python src/08_topic_model_quality.py
-"""
+"""step 8: topic-model quality"""
 
 from __future__ import annotations
 
@@ -35,11 +31,7 @@ os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 
 
 def top_words_for_topics(model, top_k: int = 15) -> list[list]:
-    """Return top words for each topic in descending weight order.
-
-    The order ensures that NPMI uses the highest-weighted words. Code that needs
-    sets, such as the Jaccard check, converts them locally.
-    """
+    """return top words for each topic in descending weight order"""
     vocab = np.asarray(model.get_vocab())
     return [
         vocab[np.argsort(weights)[::-1][:top_k]].tolist()
@@ -48,13 +40,7 @@ def top_words_for_topics(model, top_k: int = 15) -> list[list]:
 
 
 def topic_diversity(word_lists: list[list], top_k: int = 25) -> float:
-    """Share of distinct words across all topics' top_k words.
-
-    Interpretation note: diversity can fall with k mechanically, because
-    more topics means more opportunity for overlap. It is therefore a weak
-    model-selection criterion on its own and should be read as a description,
-    not as evidence that a smaller k is better.
-    """
+    """share of distinct words across all topics' top_k words"""
     all_words = []
     for words in word_lists:
         all_words.extend(list(words)[:top_k])
@@ -64,26 +50,12 @@ def topic_diversity(word_lists: list[list], top_k: int = 25) -> float:
 
 
 def npmi_coherence(texts: list[str], word_lists: list[list], top_k: int = 10) -> float:
-    """Mean NPMI over topics via gensim if available; else a simple PMI proxy.
-
-    word_lists must be ORDERED by topic weight; see top_words_for_topics.
-
-    Interpreting the sign: NPMI runs from -1 to +1, and negative values mean the
-    top words co-occur in the same document less often than chance. On a corpus
-    of short documents that is common and not by itself evidence of a bad model,
-    because a learner letter or a simplified news item contains few words and
-    most topic keywords simply cannot co-occur within it. The values are used
-    here only to compare k against k on identical data, never as an absolute
-    quality judgement.
-    """
+    """mean npmi over topics via gensim if available; else a simple pmi proxy"""
     try:
         from gensim.corpora import Dictionary
         from gensim.models import CoherenceModel
 
-        # use the same analyser as the countvectorizer that produced the topic
-        # vocabulary. splitting on whitespace leaves punctuation attached
-        # ("oesterreich," vs "oesterreich"), so topic words silently fail to
-        # match the reference texts and coherence comes out too low.
+        # countvectorizer-compatible tokenisation
         from sklearn.feature_extraction.text import CountVectorizer
         _analyzer = CountVectorizer(lowercase=True).build_analyzer()
         tokenized = [_analyzer(t) for t in texts]
@@ -132,12 +104,7 @@ def _proxy_coherence(texts, word_lists, top_k: int = 10) -> float:
 
 
 def matched_jaccard(lists_a: list[list], lists_b: list[list]) -> float:
-    """Mean Jaccard overlap of optimally matched topics between two runs.
-
-    Order is irrelevant here (overlap is a set operation), so the ordered lists
-    are converted to sets locally. Topics are matched with the Hungarian
-    algorithm because topic indices are arbitrary across runs.
-    """
+    """mean jaccard overlap of optimally matched topics between two runs"""
     sets_a = [set(x) for x in lists_a]
     sets_b = [set(x) for x in lists_b]
     n = min(len(sets_a), len(sets_b))
@@ -209,9 +176,7 @@ def main() -> None:
     qdf = pd.DataFrame(quality_rows)
     qdf.to_csv(RESULTS_DIR / f"topic_quality_{lang}.csv", index=False)
 
-    # only plot reconstruction error if the installed turftopic actually exposes
-    # it. plotting an all-nan series produces a blank third panel, which looks
-    # like a broken figure rather than an unavailable metric.
+    # optional reconstruction-error panel
     has_recon = qdf["reconstruction_err"].notna().any()
     if not has_recon:
         print("\n  NOTE: this Turftopic build does not expose the NMF "

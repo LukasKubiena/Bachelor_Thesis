@@ -1,31 +1,4 @@
-"""Step 0 (optional): Convert the gated raw corpora to UniversalCEFR schema.
-
-Reads the raw DEPlain and APA-LHA releases from in/raw/ and writes
-UniversalCEFR-style JSONL files into in/external/, where 01_load_data.py
-picks them up automatically. Run this once, then rerun the pipeline from
-step 1.
-
-Expected layout (as downloaded from Zenodo):
-    in/raw/DEPlain/B__Document-level_Corpus/DEplain-APA-doc/plain-text/all.csv
-    in/raw/DEPlain/E__Sentence-level_Corpus/DEplain-APA-sent/all.csv
-    in/raw/APA_sentence-aligned_LHA/A2-OR/*.de, *_A2.simpde
-    in/raw/APA_sentence-aligned_LHA/B1-OR/*.de, *_B1.simpde
-
-Label sources (nothing is guessed):
-    DEplain-APA carries its levels in the data itself: originals are B1,
-    simplifications are A2 (columns complex_level / simple_level in the doc
-    CSV and language_level_original / language_level_simple in the sentence
-    CSV). APA-LHA carries the level in the filename (_A2 / _B1). The APA-LHA
-    originals (.de) have no CEFR label and are therefore excluded.
-
-Run:
-    python src/00_convert_raw.py
-    python src/00_convert_raw.py --include-sentences   # also emit DEplain-APA-sent
-
-Sentence-level data is skipped by default: single sentences are a poor unit
-for topic modelling and would swamp the ~5k documents with ~25k fragments.
-Include them only for a deliberate granularity comparison.
-"""
+"""step 0: gated corpus conversion"""
 
 from __future__ import annotations
 
@@ -47,7 +20,7 @@ APA_LHA = RAW_DIR / "APA_sentence-aligned_LHA"
 
 
 def detokenize(text: str) -> str:
-    """Undo the pre-tokenized spacing in APA-LHA files ('Wort , Wort .')."""
+    """undo the pre-tokenized spacing in apa-lha files ('wort , wort .')"""
     text = re.sub(r"\s+([.,;:!?%)\]])", r"\1", text)
     text = re.sub(r"([(\[])\s+", r"\1", text)
     return re.sub(r"\s+", " ", text).strip()
@@ -66,7 +39,7 @@ def record(
         "lang": "de",
         "source_name": source_name,
         "format": fmt,
-        "category": "reference",  # professionally written or simplified, not learner-produced
+        "category": "reference",  # non-learner text
         "cefr_level": level.upper(),
         "license": "restricted, academic use only, do not redistribute",
         "text": text,
@@ -88,9 +61,7 @@ def convert_deplain_doc() -> None:
     print("Converting DEplain-APA-doc ...")
     df = pd.read_csv(DEPLAIN_DOC)
     records = []
-    # each row is one original/simplification document pair. deduplicate by
-    # document id in case a document participates in several pairs. the acl
-    # release already ships pair_id linking original <-> simplification.
+    # unique documents linked by pair_id
     for id_col, text_col, level_col in [
         ("complex_document_id", "original", "complex_level"),
         ("simple_document_id", "simplification", "simple_level"),
@@ -139,7 +110,7 @@ def convert_apa_lha() -> None:
             continue
         for path in sorted(folder.glob("*.simpde")):
             # filename pattern: <id>_<year>_<level>.simpde
-            # shared article id is the leading <id>_<year> prefix.
+            # shared id: <id>_<year>
             match = re.search(r"_(A2|B1)\.simpde$", path.name)
             prefix = re.match(r"(\d+_\d+)", path.name)
             if not match:

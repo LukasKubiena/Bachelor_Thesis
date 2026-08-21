@@ -1,9 +1,4 @@
-"""statistics used by more than one analysis step.
-
-cramér's v is bias-corrected for sparse tables. permutation tests provide the
-reported p-values. adjusted mutual information supports comparisons across
-topic counts, and theil's u keeps the direction of association explicit.
-"""
+"""shared statistical functions"""
 
 from __future__ import annotations
 
@@ -13,20 +8,11 @@ from scipy.optimize import brentq
 from scipy.stats import chi2_contingency, kruskal, ncx2
 from sklearn.metrics import adjusted_mutual_info_score, normalized_mutual_info_score
 
-# ---------------------------------------------------------------------------
 # effect sizes
-# ---------------------------------------------------------------------------
 
 
 def cramers_v(confusion: pd.DataFrame) -> tuple[float, float]:
-    """Bias-corrected Cramer's V (Bergsma, 2013) and the chi-square p-value.
-
-    correction=False turns off Yates' continuity correction, which scipy
-    applies to 2x2 tables by default. Yates is meant to improve a p-value, not
-    an effect size, so it would shrink V for the wrong reasons. None of my
-    tables are 2x2, so this doesn't change any reported number, but it would be
-    wrong if the function were reused elsewhere.
-    """
+    """bias-corrected cramer's v (bergsma, 2013) and the chi-square p-value"""
     chi2, p, _, _ = chi2_contingency(confusion, correction=False)
     n = confusion.to_numpy().sum()
     r, k = confusion.shape
@@ -40,14 +26,7 @@ def cramers_v(confusion: pd.DataFrame) -> tuple[float, float]:
 
 
 def cramers_v_uncorrected(confusion: pd.DataFrame) -> float:
-    """Cramer's V without the bias correction. Only used inside simulations.
-
-    The uncorrected version is needed there for two reasons. The correction is a
-    finite-sample adjustment, so applying it to a population table (as in the
-    power simulation) would report a real association as zero. And the
-    corrected V clips at zero, so on sparse tables its null distribution piles
-    up on 0 and a percentile critical value stops working.
-    """
+    """cramer's v without the bias correction. only used inside simulations"""
     chi2, _, _, _ = chi2_contingency(confusion, correction=False)
     n = confusion.to_numpy().sum()
     r, k = confusion.shape
@@ -56,7 +35,7 @@ def cramers_v_uncorrected(confusion: pd.DataFrame) -> float:
 
 
 def cramers_v_from_arrays(a, b) -> float:
-    """Convenience wrapper for the resampling loops."""
+    """convenience wrapper for the resampling loops"""
     ct = pd.crosstab(pd.Series(np.asarray(a)), pd.Series(np.asarray(b)))
     if ct.shape[0] < 2 or ct.shape[1] < 2:
         return np.nan
@@ -64,12 +43,7 @@ def cramers_v_from_arrays(a, b) -> float:
 
 
 def theils_u(x, y) -> float:
-    """Theil's U: what share of the uncertainty about x is removed by knowing y.
-
-    Unlike mutual information this is asymmetric, so theils_u(level, topic)
-    answers "how much does topic tell me about level" rather than the other way
-    round. Returns 0 if y says nothing about x, 1 if y determines x.
-    """
+    """theil's u: what share of the uncertainty about x is removed by knowing y"""
     x = np.asarray(x)
     y = np.asarray(y)
     ct = pd.crosstab(pd.Series(x), pd.Series(y)).to_numpy().astype(float)
@@ -88,14 +62,7 @@ def theils_u(x, y) -> float:
 
 
 def epsilon_squared_kruskal(level_ranks, groups) -> tuple[float, float, float]:
-    """Kruskal-Wallis on CEFR rank grouped by topic, with epsilon squared.
-
-    Cramer's V treats the CEFR levels as unordered, so this is reported alongside
-    it. Epsilon squared is the share of variance in level rank explained by
-    topic. It only needs level to be ordered, not topic, which fits the data.
-
-    Returns (epsilon_squared, H, p).
-    """
+    """kruskal-wallis on cefr rank grouped by topic, with epsilon squared"""
     level_ranks = np.asarray(level_ranks, dtype=float)
     groups = np.asarray(groups)
     samples = [level_ranks[groups == g] for g in np.unique(groups)]
@@ -110,7 +77,7 @@ def epsilon_squared_kruskal(level_ranks, groups) -> tuple[float, float, float]:
 
 
 def information_measures(a, b) -> dict:
-    """AMI, plain NMI, and Theil's U in both directions."""
+    """ami, plain nmi, and theil's u in both directions"""
     return {
         "ami": float(adjusted_mutual_info_score(a, b)),
         "nmi": float(normalized_mutual_info_score(a, b)),
@@ -119,22 +86,11 @@ def information_measures(a, b) -> dict:
     }
 
 
-# ---------------------------------------------------------------------------
 # uncertainty
-# ---------------------------------------------------------------------------
 
 
 def cramers_v_ncx2_ci(confusion: pd.DataFrame, alpha: float = 0.05) -> dict:
-    """Approximate CI for population Cramer's V by inverting noncentral chi².
-
-    For a contingency table, Pearson's statistic is asymptotically noncentral
-    chi-square under an alternative, with noncentrality ``lambda = n * phi²``.
-    Since ``V = phi / sqrt(min(r-1, c-1))``, inverting that distribution gives
-    a bounded interval for V. Unlike the resample-and-recentre intervals below,
-    it includes zero for the near-null news tables and is coherent with the
-    chi-square/permutation evidence. Simulation in 03d checks its coverage for
-    the observed table structures rather than only balanced synthetic margins.
-    """
+    """approximate ci for population cramer's v by inverting noncentral chi²"""
     ct = pd.DataFrame(confusion).copy()
     ct = ct.loc[ct.sum(axis=1) > 0, ct.sum(axis=0) > 0]
     if ct.shape[0] < 2 or ct.shape[1] < 2:
@@ -146,8 +102,7 @@ def cramers_v_ncx2_ci(confusion: pd.DataFrame, alpha: float = 0.05) -> dict:
 
     def lambda_at_cdf(target: float) -> float:
         fn = lambda lam: float(ncx2.cdf(stat, dfree, lam) - target)
-        # increasing lambda shifts mass to the right, so the cdf decreases. if
-        # the target already lies above the central cdf, the bound is zero.
+        # zero bound above the central cdf
         if fn(0.0) <= 0:
             return 0.0
         hi = max(1.0, float(stat + dfree))
@@ -167,15 +122,7 @@ def cramers_v_ncx2_ci(confusion: pd.DataFrame, alpha: float = 0.05) -> dict:
 
 
 def bootstrap_v(a, b, n_boot: int = 2000, seed: int = 42, alpha: float = 0.05) -> dict:
-    """Bias-corrected V with a primary noncentral-chi² interval.
-
-    Bootstrap draws are retained for a standard-error and sensitivity
-    diagnostics. They are not the headline interval: resampling sparse tables
-    pushes corrected V upward, causing percentile intervals to fail near zero,
-    while a symmetric normal interval can exclude zero even when independence
-    is not rejected. ``ci_lo``/``ci_hi`` therefore use noncentral chi-square
-    inversion; all bootstrap alternatives are returned under explicit names.
-    """
+    """bias-corrected v with a primary noncentral-chi² interval"""
     rng = np.random.default_rng(seed)
     a = np.asarray(a)
     b = np.asarray(b)
@@ -215,12 +162,7 @@ def ci_coverage_check(n: int, tilt: float | None = None, n_lev: int = 6,
                       n_top: int = 15, n_rep: int = 1000, n_boot: int = 120,
                       seed: int = 42, joint: np.ndarray | None = None,
                       n_bootstrap_rep: int | None = None) -> dict:
-    """Simulated coverage against a known joint distribution.
-
-    Pass ``joint`` to reproduce an observed table structure (or its independence
-    model). ``tilt`` remains available for small regression tests. The true
-    population V is calculated analytically from the generating probabilities.
-    """
+    """simulated coverage against a known joint distribution"""
     rng = np.random.default_rng(seed)
     if joint is None:
         if tilt is None:
@@ -272,13 +214,7 @@ def ci_coverage_check(n: int, tilt: float | None = None, n_lev: int = 6,
 
 
 def permutation_p(a, b, n_perm: int = 5000, seed: int = 42) -> dict:
-    """Permutation p-value for the null that a and b are independent.
-
-    Shuffles a, recomputes V, and counts how often the shuffled V reaches the
-    observed one. If that never happens I report p < 1/n_perm, which is the
-    lowest the test can actually resolve. The chi-square p underflows to
-    0.00e+00 on the full dataset, which isn't something I can put in a table.
-    """
+    """permutation p-value for the null that a and b are independent"""
     rng = np.random.default_rng(seed)
     a = np.asarray(a).copy()
     b = np.asarray(b)
@@ -288,7 +224,7 @@ def permutation_p(a, b, n_perm: int = 5000, seed: int = 42) -> dict:
         rng.shuffle(a)
         if cramers_v_from_arrays(a, b) >= obs:
             count += 1
-    p = (count + 1) / (n_perm + 1)  # add-one, never reports exactly zero
+    p = (count + 1) / (n_perm + 1)  # nonzero add-one estimate
     return {
         "v": float(obs),
         "perm_p": float(p),
@@ -298,10 +234,7 @@ def permutation_p(a, b, n_perm: int = 5000, seed: int = 42) -> dict:
 
 
 def subsample_v(a, b, n_sub: int, n_rep: int = 200, seed: int = 42) -> dict:
-    """spread of v after subsampling each corpus to the same size.
-
-    this checks whether the corpus ranking is mainly driven by sample size.
-    """
+    """spread of v after subsampling each corpus to the same size"""
     rng = np.random.default_rng(seed)
     a = np.asarray(a)
     b = np.asarray(b)
@@ -325,9 +258,7 @@ def subsample_v(a, b, n_sub: int, n_rep: int = 200, seed: int = 42) -> dict:
     }
 
 
-# ---------------------------------------------------------------------------
 # power / equivalence for the null results
-# ---------------------------------------------------------------------------
 
 
 def minimum_detectable_v(
@@ -339,18 +270,7 @@ def minimum_detectable_v(
     n_sim: int = 400,
     seed: int = 42,
 ) -> dict:
-    """Scenario-specific detection point for one family of alternatives.
-
-    A non-significant result alone does not establish equivalence. This
-    diagnostic explores what size of effect would be detected under the particular
-    rotating-level tilt below. Power is not determined by V and sample size
-    alone, so the result must not be presented as a universal MDE or bound.
-
-    How it works: build a table with the observed margins, add an association
-    of increasing strength by tilting the level distribution inside each topic,
-    draw n documents from it, and test. Returns the smallest injected V that
-    gets rejected at least `power` of the time.
-    """
+    """scenario-specific detection point for one family of alternatives"""
     rng = np.random.default_rng(seed)
     p_level = np.asarray(level_counts, dtype=float)
     p_level = p_level / p_level.sum()
@@ -358,11 +278,7 @@ def minimum_detectable_v(
     p_topic = p_topic / p_topic.sum()
     n_lv, n_tp = len(p_level), len(p_topic)
 
-    # test statistic is the uncorrected v, and the critical value comes from
-    # simulation rather than a chi-square table. the corrected v piles up on 0
-    # for sparse tables so a percentile cutoff stops working, and the
-    # chi-square approximation is too generous at ~6 expected per cell, which
-    # would overstate power. type_i_error_check below confirms this holds .05.
+    # simulated cutoff for sparse-table power
     def stat(counts: np.ndarray) -> float:
         ct = pd.DataFrame(counts)
         ct = ct.loc[ct.sum(1) > 0, ct.sum(0) > 0]
@@ -378,11 +294,7 @@ def minimum_detectable_v(
     crit = float(np.percentile(null_stats, 100 * (1 - alpha)))
 
     def simulate(joint: np.ndarray) -> tuple[float, float]:
-        """Returns (empirical power, true V of the table I generated from).
-
-        Uncorrected V here, because the generating table is a population and
-        not a sample, so the finite-sample correction doesn't apply.
-        """
+        """returns (empirical power, true v of the table i generated from)"""
         true_v = cramers_v_uncorrected(pd.DataFrame(joint * n))
         hits = sum(
             stat(rng.multinomial(n, joint.ravel()).reshape(n_lv, n_tp)) > crit
@@ -390,12 +302,11 @@ def minimum_detectable_v(
         )
         return hits / n_sim, true_v
 
-    # size check: under independence the rejection rate must sit at alpha.
+    # null rejection-rate check
     null_power = float(np.mean(null_stats > crit))
 
     for strength in np.arange(0.02, 0.90, 0.02):
-        # tilt: within each topic, shift mass towards one level, cycling which,
-        # which produces a monotone family of alternatives with increasing v.
+        # monotone alternatives from topic-level tilts
         joint = np.outer(p_level, p_topic).copy()
         for j in range(n_tp):
             target = j % n_lv
@@ -423,17 +334,11 @@ def minimum_detectable_v(
             "power": power, "alpha": alpha, "n": int(n)}
 
 
-# ---------------------------------------------------------------------------
 # contingency table diagnostics
-# ---------------------------------------------------------------------------
 
 
 def standardised_residuals(ct: pd.DataFrame) -> pd.DataFrame:
-    """Adjusted Pearson residuals, i.e. which topics go with which levels.
-
-    Under independence these are roughly standard normal, so |r| > 2 is worth
-    mentioning and |r| > 3 is a strong cell.
-    """
+    """adjusted pearson residuals, i.e. which topics go with which levels"""
     obs = ct.to_numpy(dtype=float)
     n = obs.sum()
     row_p = obs.sum(axis=1) / n
@@ -453,21 +358,10 @@ def expected_counts(ct: pd.DataFrame) -> pd.DataFrame:
 
 def cmh_by_level(df: pd.DataFrame, level_col="cefr_level", topic_col="topic",
                  stratum_col="dataset") -> pd.DataFrame:
-    """Cochran-Mantel-Haenszel: is topic still tied to level within corpora?
-
-    The overall V mixes two things together, since topics differ between
-    corpora and corpora also differ in which levels they contain. Stratifying
-    by corpus and pooling separates them.
-
-    I run it once per CEFR level (that level against all the others, by topic,
-    stratified by corpus), which makes it easy to report which levels survive
-    the conditioning. The stratum_col argument also lets me stratify by length
-    bin instead of corpus, which is what 03c does.
-    """
+    """cochran-mantel-haenszel: is topic still tied to level within corpora?"""
     from scipy.stats import chi2 as chi2_dist
 
-    # every stratum has to use the same topic list, otherwise the per-stratum
-    # vectors come out different lengths and can't be added together.
+    # shared topic list across strata
     all_topics = sorted(df[topic_col].unique())
     rows = []
     for level in sorted(df[level_col].unique()):
@@ -487,13 +381,10 @@ def cmh_by_level(df: pd.DataFrame, level_col="cefr_level", topic_col="topic",
                 continue
             colsum = obs.sum(axis=0)
             exp = n1 * colsum / n_k
-            # hypergeometric covariance of the top-row counts, dropping the
-            # last topic so the matrix isn't singular by construction:
-            #   var(n_1j)      =  n1*n2*c_j*(n - c_j) / (n^2 (n-1))
-            #   cov(n_1j,n_1l) = -n1*n2*c_j*c_l       / (n^2 (n-1))
-            # i.e. n1*n2/(n^2(n-1)) * (n*diag(c) - outer(c,c)).
-            # the n inside the bracket is required
-            # and the statistic came out n times too big (chi2 of ~200,000).
+            # hypergeometric covariance without the final topic
+            # var(n_1j)      =  n1*n2*c_j*(n - c_j) / (n^2 (n-1))
+            # cov(n_1j,n_1l) = -n1*n2*c_j*c_l       / (n^2 (n-1))
+            # n1*n2/(n^2(n-1)) * (n*diag(c) - outer(c,c))
             d = (obs[1, :] - exp)[:-1]
             c = colsum[:-1]
             n2 = n_k - n1
@@ -506,13 +397,7 @@ def cmh_by_level(df: pd.DataFrame, level_col="cefr_level", topic_col="topic",
         d_sum = np.sum(np.stack([t[0] for t in strata_terms]), axis=0)
         cov_sum = np.sum(np.stack([t[1] for t in strata_terms]), axis=0)
 
-        # the pooled covariance can be rank deficient if a topic is missing
-        # from some strata, so i use a pseudo-inverse with an explicit cutoff.
-        # numpy's default (1e-15) turns a near-zero singular value into a huge
-        # number and the result starts depending on floating point noise.
-        # i return the condition number too, so it's checkable: on my data it
-        # sits around 10-300 and the statistic is the same to six decimals for
-        # any cutoff between 1e-15 and 1e-6.
+        # explicit pseudo-inverse cutoff for rank-deficient covariance
         sv = np.linalg.svd(cov_sum, compute_uv=False)
         if sv.size == 0 or sv[0] <= 0:
             continue
@@ -520,9 +405,7 @@ def cmh_by_level(df: pd.DataFrame, level_col="cefr_level", topic_col="topic",
         dfree = int(np.sum(sv > rcond * sv[0]))
         if dfree < 1:
             continue
-        # the matmul can throw overflow warnings even when the answer is fine
-        # (this happened on the english data, and the value was stable). so i
-        # silence the warning but still fail loudly if the result isn't finite.
+        # suppress overflow warning, then require a finite result
         try:
             with np.errstate(divide="ignore", over="ignore", invalid="ignore"):
                 stat = float(d_sum @ np.linalg.pinv(cov_sum, rcond=rcond) @ d_sum)
@@ -541,7 +424,7 @@ def cmh_by_level(df: pd.DataFrame, level_col="cefr_level", topic_col="topic",
 
 
 def holm(pvals: list[float]) -> list[float]:
-    """Holm-Bonferroni adjusted p-values, order preserved."""
+    """holm-bonferroni adjusted p-values, order preserved"""
     from statsmodels.stats.multitest import multipletests
 
     _, adj, _, _ = multipletests(pvals, method="holm")
@@ -549,14 +432,7 @@ def holm(pvals: list[float]) -> list[float]:
 
 
 def length_quartile_bins(word_count, n_bins: int = 4) -> pd.Series:
-    """Within-sample quartile labels (Q1..Qk) for a length column.
-
-    Ties can collapse the number of bins (`duplicates='drop'`). That is
-    reported rather than forced: inventing extra boundaries on a discrete
-    length distribution would make the strata look more even than they are.
-    Documents with identical length therefore share a bin, which is the
-    honest assignment.
-    """
+    """within-sample quartile labels (q1..qk) for a length column"""
     s = pd.Series(word_count)
     if len(s) == 0:
         return s.astype(str)
@@ -566,9 +442,7 @@ def length_quartile_bins(word_count, n_bins: int = 4) -> pd.Series:
     return pd.Series([f"Q{int(c) + 1}" for c in codes], index=s.index)
 
 
-# ---------------------------------------------------------------------------
 # classification metrics (shared by 04, 06, 07)
-# ---------------------------------------------------------------------------
 
 from sklearn.metrics import accuracy_score, cohen_kappa_score, f1_score
 
@@ -576,7 +450,7 @@ from config import LEVEL_ORDER
 
 
 def adjacent_accuracy(y_true, y_pred) -> float:
-    """Share of predictions within one CEFR level of the truth."""
+    """share of predictions within one cefr level of the truth"""
     idx = {level: i for i, level in enumerate(LEVEL_ORDER)}
     t = np.array([idx[l] for l in y_true])
     p = np.array([idx[l] for l in y_pred])
@@ -601,6 +475,6 @@ def classification_metrics(y_true, y_pred) -> dict:
 
 
 def cramers_v_ci(levels, topics, n_boot: int = 2000, seed: int = 42, alpha: float = 0.05):
-    """Compatibility wrapper: returns (v, lo, hi, boots_placeholder)."""
+    """compatibility wrapper: returns (v, lo, hi, boots_placeholder)"""
     res = bootstrap_v(levels, topics, n_boot=n_boot, seed=seed, alpha=alpha)
     return res["v"], res["ci_lo"], res["ci_hi"], np.array([res["v"]])

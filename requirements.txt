@@ -1,5 +1,5 @@
-# pinned versions used for the final analysis
-# the manifests also record the environment
+# final analysis versions
+# versions also stored in manifests
 
 # core
 numpy==2.2.6
@@ -24,5 +24,5 @@ stopwordsiso==0.6.1
 # tests
 pytest==8.3.4
 
-# stopwordsiso still needs pkg_resources
+# pkg_resources dependency for stopwordsiso
 setuptools==80.9.0

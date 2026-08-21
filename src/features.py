@@ -1,15 +1,4 @@
-"""Surface feature blocks, kept in one place.
-
-Scripts 06 and 07c share these definitions so that a word-count-only baseline
-cannot be confused with the four-feature surface block.
-
-Naming matters here too. Only two of the four features are length in any
-ordinary sense. `tokens_per_sentence` is a syntactic complexity measure and
-`mean_word_len` is a lexical one, so the block as a whole is "surface features",
-not "length". The distinction is not pedantic: in ELG the texts are written to a
-roughly fixed length, so word count carries nothing (Spearman .14) while the two
-complexity features carry a great deal (.72 and .70).
-"""
+"""shared feature definitions"""
 
 from __future__ import annotations
 
@@ -26,14 +15,7 @@ _SENT_SPLIT = re.compile(r"[.!?]+")
 
 
 def vectorizer_stopwords(lang: str) -> list[str]:
-    """Return stopwords consistent with CountVectorizer's tokenisation.
-
-    stopwords-iso contains English contractions such as ``hadn't``. The
-    default analyser turns those entries into fragments such as ``hadn``;
-    scikit-learn warns because the fragments are not in the original list and
-    could therefore become topic keywords. Adding every analysed token keeps
-    the intended stopword exclusion aligned with the actual vectorizer.
-    """
+    """return stopwords consistent with countvectorizer's tokenisation"""
     with warnings.catch_warnings():
         warnings.filterwarnings(
             "ignore",
@@ -49,19 +31,14 @@ def vectorizer_stopwords(lang: str) -> list[str]:
 
 
 def _assert_finite_array(values, label: str) -> None:
-    """Fail loudly when a dense or sparse numerical object is non-finite."""
+    """fail loudly when a dense or sparse numerical object is non-finite"""
     data = values.data if sparse.issparse(values) else np.asarray(values)
     if not np.isfinite(data).all():
         raise FloatingPointError(f"{label} contains NaN or infinite values")
 
 
 def checked_numeric_matrix(operation, label: str, *, nonnegative: bool = False) -> np.ndarray:
-    """Run a matrix-producing operation and enforce finite output.
-
-    The scoped warning filter addresses the same Accelerate false alarms as
-    :class:`CheckedLogisticRegression`. It never converts or repairs an
-    invalid result: non-finite or unexpectedly negative output is fatal.
-    """
+    """run a matrix-producing operation and enforce finite output"""
     with np.errstate(divide="ignore", over="ignore", invalid="ignore"):
         with warnings.catch_warnings():
             warnings.filterwarnings(
@@ -79,16 +56,7 @@ def checked_numeric_matrix(operation, label: str, *, nonnegative: bool = False) 
 
 
 class CheckedLogisticRegression(LogisticRegression):
-    """Logistic regression with explicit numerical postconditions.
-
-    NumPy's macOS Accelerate backend can emit spurious overflow/invalid
-    warnings from scikit-learn's matrix multiplications even when their inputs
-    and returned values are finite. The warnings otherwise overwhelm a full
-    rerun. This estimator suppresses only those RuntimeWarnings inside the
-    relevant operations, then fails the analysis if the design matrix, fitted
-    parameters, decision scores, or probabilities are actually non-finite.
-    ConvergenceWarning and every other warning remain visible.
-    """
+    """logistic regression with explicit numerical postconditions"""
 
     @staticmethod
     def _checked_call(operation, label: str):
@@ -133,12 +101,7 @@ class CheckedLogisticRegression(LogisticRegression):
 
 
 def surface_features(texts: pd.Series) -> pd.DataFrame:
-    """Four surface features: two of length, two of complexity. No content words.
-
-    Keeping content words out is what makes the comparison against the topic
-    features meaningful: if I put words in, I would just be building a lexical
-    classifier and the contrast with the topic representation would be lost.
-    """
+    """four surface features: two of length, two of complexity. no content words"""
     rows = []
     for t in texts.astype(str):
         words = t.split()
@@ -154,12 +117,12 @@ def surface_features(texts: pd.Series) -> pd.DataFrame:
 
 
 def word_count_feature(word_count) -> np.ndarray:
-    """Log word count on its own, as a deliberately minimal length baseline."""
+    """log word count on its own, as a deliberately minimal length baseline"""
     return np.c_[np.log1p(np.asarray(word_count, dtype=float))]
 
 
 def validation_groups(df: pd.DataFrame) -> np.ndarray:
-    """Use merged parallel/near-duplicate families for cross-validation."""
+    """use merged parallel/near-duplicate families for cross-validation"""
     if "cv_group" in df.columns and df["cv_group"].notna().all():
         return df["cv_group"].astype(str).to_numpy()
     if "pair_id" in df.columns and df["pair_id"].notna().all():
@@ -171,15 +134,7 @@ def validation_groups(df: pd.DataFrame) -> np.ndarray:
 
 
 def normalise_topic_weights(matrix) -> np.ndarray:
-    """Convert non-negative topic loadings into per-document relative weights.
-
-    KeyNMF returns non-negative NMF loadings whose row sums are not constrained
-    to one.  The total loading can partly track how many candidate keywords a
-    document produced and therefore its length.  Predictive analyses use the
-    L1-normalised rows as their main topic representation so that they measure
-    the relative topic profile.  All-zero rows remain all zero and can be
-    counted by callers as a data-quality diagnostic.
-    """
+    """convert non-negative topic loadings into per-document relative weights"""
     mat = np.asarray(matrix, dtype=float)
     if mat.ndim != 2:
         raise ValueError(f"topic matrix must be 2-dimensional, got shape {mat.shape}")
@@ -191,6 +146,5 @@ def normalise_topic_weights(matrix) -> np.ndarray:
     return np.divide(mat, row_sum, out=np.zeros_like(mat), where=row_sum > 0)
 
 
-# old name, kept so nothing that still imports it breaks. new code should use
-# surface_features so the name matches what the block actually contains.
+# compatibility alias; new code uses surface_features
 length_features = surface_features

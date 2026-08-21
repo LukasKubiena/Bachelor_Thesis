@@ -1,18 +1,4 @@
-"""Step 1: Build the combined CEFR table for one language.
-
-Downloads the openly available UniversalCEFR datasets for the chosen language
-from HuggingFace, merges any gated corpora you have placed in
-in/external/<lang>/ (UniversalCEFR JSON schema), normalizes the labels, and
-writes one combined CSV.
-
-Run:
-    python src/01_load_data.py             # German (default)
-    python src/01_load_data.py --lang en   # English
-
-Output:
-    in/texts_<lang>.csv   one row per text with columns:
-        text, cefr_level, source_name, dataset, format, category, word_count
-"""
+"""step 1: combined cefr dataset"""
 
 import argparse
 import hashlib
@@ -33,17 +19,17 @@ from config import (
     paths,
 )
 
-# columns of the universalcefr schema we keep.
+# retained universalcefr columns
 KEEP_COLS = ["text", "cefr_level", "source_name", "format", "category", "pair_id", "title"]
 
 
 def load_open_datasets(lang: str) -> list:
-    """Pull the open datasets for this language from the HuggingFace hub."""
+    """pull the open datasets for this language from the huggingface hub"""
     frames = []
     for name in OPEN_HF_DATASETS[lang]:
         print(f"Downloading {name} ...")
         ds = load_dataset(name)
-        # datasets may have one or more splits; concatenate them all.
+        # combined dataset splits
         parts = [ds[split].to_pandas() for split in ds.keys()]
         df = pd.concat(parts, ignore_index=True)
         df["dataset"] = name.split("/")[-1]
@@ -53,11 +39,7 @@ def load_open_datasets(lang: str) -> list:
 
 
 def load_external_files(lang: str) -> list:
-    """Merge gated corpora if you have added them.
-
-    Any .json or .jsonl file in in/external/<lang>/ that follows the
-    UniversalCEFR schema is picked up automatically.
-    """
+    """merge gated corpora if you have added them"""
     frames = []
     ext = external_dir(lang)
     if not ext.exists():
@@ -76,19 +58,14 @@ def load_external_files(lang: str) -> list:
 
 
 def assign_pair_ids(df: pd.DataFrame) -> pd.DataFrame:
-    """Ensure every row has a pair_id.
-
-    Parallel corpora (DEplain, APA-LHA) already carry article-level pair_ids
-    from the converter. Learner/reference corpora get a unique per-document id
-    so StratifiedGroupKFold degrades gracefully to ordinary stratified CV.
-    """
+    """ensure every row has a pair_id"""
     df = df.copy()
     if "pair_id" not in df.columns:
         df["pair_id"] = pd.NA
     missing = df["pair_id"].isna() | (df["pair_id"].astype(str).str.strip() == "") | (
         df["pair_id"].astype(str).str.lower() == "nan"
     )
-    # unique ids for unpaired rows (merlin, elg, and any leftover).
+    # ids for unpaired rows
     for i in df.index[missing]:
         df.at[i, "pair_id"] = f"{df.at[i, 'dataset']}__{i}"
     df["pair_id"] = df["pair_id"].astype(str)
@@ -96,12 +73,7 @@ def assign_pair_ids(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def exact_duplicate_audit(df: pd.DataFrame) -> pd.DataFrame:
-    """Summarise exact duplicates before pooled de-duplication.
-
-    Text itself is not written to the audit because some input corpora cannot
-    be redistributed. A SHA-256 digest is sufficient to identify and trace a
-    duplicate locally without copying licensed text into ``out/``.
-    """
+    """summarise exact duplicates before pooled de-duplication"""
     duplicated = df[df.duplicated(subset=["text"], keep=False)]
     rows = []
     for text, group in duplicated.groupby("text", sort=False):
@@ -136,14 +108,13 @@ def main() -> None:
     frames = load_open_datasets(args.lang) + load_external_files(args.lang)
     df = pd.concat(frames, ignore_index=True)
 
-    # keep only the schema columns that exist plus our dataset tag.
+    # available schema columns plus dataset tag
     cols = [c for c in KEEP_COLS if c in df.columns] + ["dataset"]
     df = df[cols].copy()
 
     n_start = len(df)
 
-    # i log every filter separately. the paper reports a final n, and a reader
-    # should be able to see how it was arrived at rather than take it on trust.
+    # separate filter counts
     raw_labels = df["cefr_level"].copy()
     df["cefr_level"] = raw_labels.map(normalize_level)
     n_sublevel = int(
@@ -195,7 +166,7 @@ def main() -> None:
     print("  01c separately checks near-duplicate articles.")
     print(f"  audit: out/exact_duplicates_preclean_{args.lang}.csv")
 
-    # acceptance check for parallel structure.
+    # parallel-pair check
     sizes = df.groupby("pair_id").size()
     print("\npair_id group-size counts (expect ~483 size-2 for deplain):")
     print(sizes.value_counts().sort_index().to_string())
@@ -207,9 +178,7 @@ def main() -> None:
     df.to_csv(p["combined_csv"], index=False)
     print(f"Saved {p['combined_csv']}")
 
-    # ------------------------------------------------------------------
-    # summary: this table is worth eyeballing before any modelling.
-    # ------------------------------------------------------------------
+    # quick data summary
     print("\nTexts per dataset and CEFR level:")
     summary = (
         df.pivot_table(index="dataset", columns="cefr_level", values="text", aggfunc="count", fill_value=0)

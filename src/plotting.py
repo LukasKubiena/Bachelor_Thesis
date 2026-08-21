@@ -1,4 +1,4 @@
-"""Shared matplotlib style for thesis figures (PDF + PNG)."""
+"""shared figure style"""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 
-# okabe–ito, colourblind-safe qualitative palette.
+# okabe–ito, colourblind-safe qualitative palette
 OKABE_ITO = [
     "#0072B2",  # blue
     "#E69F00",  # orange
@@ -43,7 +43,7 @@ def set_style() -> None:
 
 
 def savefig(fig, path: Path) -> None:
-    """Save both PDF (vector, for the document) and PNG (for quick viewing)."""
+    """save both pdf (vector, for the document) and png (for quick viewing)"""
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -57,7 +57,7 @@ def savefig(fig, path: Path) -> None:
 
 
 def topic_axis_labels(top_words, interpreted=None, n_kw: int = 3) -> dict:
-    """Map topic id -> 'n: kw/kw/kw' or 'n: interpreted label'."""
+    """map topic id -> 'n: kw/kw/kw' or 'n: interpreted label'"""
     labels = {}
     for t, words in top_words.items():
         kws = "/".join(str(words).split(", ")[:n_kw])

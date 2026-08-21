@@ -1,8 +1,4 @@
-"""step 9: collect headline results in out/manifest_<lang>.json.
-
-the manifest keeps the reported results in one place and checks for missing or
-inconsistent output files.
-"""
+"""step 9: result manifest"""
 
 from __future__ import annotations
 
@@ -26,7 +22,7 @@ from config import (
 
 
 def _json_safe(obj):
-    """Replace NaN/Inf so the manifest is RFC-compliant JSON (not Python/JS NaN)."""
+    """replace nan/inf so the manifest is rfc-compliant json (not python/js nan)"""
     if isinstance(obj, float) and (math.isnan(obj) or math.isinf(obj)):
         return None
     if isinstance(obj, dict):
@@ -47,8 +43,7 @@ def _json_safe(obj):
 
 
 def collect_macro_f1_drift(manifest: dict, tol: float = 0.001) -> list[str]:
-    """check that topic-mixture macro f1 agrees across steps 04, 05 and 06.
-    """
+    """check that topic-mixture macro f1 agrees across steps 04, 05 and 06"""
     pairs: list[tuple[str, float]] = []
     for row in manifest.get("baselines", {}).get("all") or []:
         if row.get("model") != "topic mixture":
@@ -94,7 +89,7 @@ def collect_macro_f1_drift(manifest: dict, tol: float = 0.001) -> list[str]:
 
 
 def collect_output_integrity(df: pd.DataFrame, lang: str) -> list[str]:
-    """Detect incomplete or incomparable outputs before they reach the thesis."""
+    """detect incomplete or incomparable outputs before they reach the thesis"""
     errors: list[str] = []
     if "cv_group" not in df.columns or df["cv_group"].isna().any():
         errors.append(
@@ -253,12 +248,7 @@ def _read_txt(path: Path) -> str | None:
 
 
 def _read_json(path: Path):
-    """Read the JSON that 03b, 06 and 07 write.
-
-    Reading their JSON rather than rebuilding numbers from the CSVs means the
-    manifest stays in step with the analysis on its own. If a file is missing
-    the script says so at the end instead of leaving a silently empty section.
-    """
+    """read the json that 03b, 06 and 07 write"""
     if not path.exists():
         return None
     try:
@@ -315,10 +305,7 @@ def main() -> None:
             manifest["data"]["cross_corpus_exact_duplicate_groups_preclean"] = int(
                 (duplicate_audit["n_corpora"] > 1).sum())
 
-    # ------------------------------------------------------------------
-    # structured json from scripts 03b / 06 / 07. these are the authoritative
-    # sources; the csv readers below remain as a fallback for older filenames.
-    # ------------------------------------------------------------------
+    # primary json outputs with csv fallback
     assoc = _read_json(RESULTS_DIR / f"association_extended_{lang}.json")
     if assoc:
         manifest["association"].update({
@@ -363,7 +350,7 @@ def main() -> None:
     by_corp = _read_csv(RESULTS_DIR / f"association_by_corpus_{lang}.csv")
     if by_corp is not None:
         overall_txt = _read_txt(RESULTS_DIR / f"association_stats_{lang}.txt") or ""
-        # prefer structured csv
+        # structured csv first
         by = {}
         for _, r in by_corp.iterrows():
             by[r["dataset"]] = {
@@ -441,10 +428,7 @@ def main() -> None:
             "cautions": ls.get("cautions"),
         }
 
-    # ------------------------------------------------------------------
-    # drift guard. the same quantity must not silently disagree across
-    # sections. do not reconcile: warn, and record the values as they are.
-    # ------------------------------------------------------------------
+    # cross-file drift guard
     warnings = collect_macro_f1_drift(manifest)
     integrity_errors = collect_output_integrity(df, lang) if src.exists() else [
         f"missing analysis table: {src}"]
@@ -463,11 +447,7 @@ def main() -> None:
     else:
         print("\nDrift guard: topic-mixture macro F1 agrees across sections (≤ 0.001).")
 
-    # ------------------------------------------------------------------
-    # say out loud what is missing. an empty section in the manifest means the
-    # script that fills it has not been run, and a silently empty manifest is
-    # exactly how the thesis text ends up disagreeing with the code.
-    # ------------------------------------------------------------------
+    # missing-output warnings
     expected = {
         "association": "src/03b_association_extended.py",
         "baselines": "src/04_topic_only_baseline.py",

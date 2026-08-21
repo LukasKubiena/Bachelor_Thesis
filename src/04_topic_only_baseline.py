@@ -1,18 +1,4 @@
-"""Step 4: test how well topic alone predicts CEFR level.
-
-Trains classifiers that see only the topic representation. Reports weighted F1
-(primary, matching Imperial et al. 2025), macro F1, adjacent accuracy, and QWK.
-Uses StratifiedGroupKFold on ``cv_group`` to block both parallel-document and
-near-duplicate leakage, and also reports ungrouped numbers for transparency.
-
-Run:
-    python src/04_topic_only_baseline.py
-    python src/04_topic_only_baseline.py --dataset merlin_de
-
-KeyNMF was fitted once to all unlabelled documents before cross-validation.
-The scores are therefore transductive, not estimates for a topic model fitted
-only on training documents.
-"""
+"""step 4: topic-only cefr prediction"""
 
 from __future__ import annotations
 
@@ -61,7 +47,7 @@ def evaluate(
     if grouped:
         cv = StratifiedGroupKFold(n_splits=N_SPLITS, shuffle=True, random_state=RANDOM_SEED)
         split_iter = cv.split(X, y, groups)
-        # cross_val_predict does not accept groups in older sklearn the same way
+        # older sklearn compatibility
         y_pred = np.empty_like(y)
         fold_metrics = []
         for train, test in split_iter:
@@ -136,9 +122,7 @@ def main() -> None:
         df, doc_topic = df[keep].reset_index(drop=True), doc_topic[keep.to_numpy()]
         print(f"Restricted to {args.dataset}: {len(df)} texts")
 
-    # keynmf returns unnormalised nmf loadings. prediction uses relative topic
-    # weights so total loading magnitude cannot act as an undocumented length
-    # proxy. hard topic ids above/below are unaffected by this normalisation.
+    # relative loadings remove loading-magnitude effects
     doc_topic = normalise_topic_weights(doc_topic)
 
     counts = df["cefr_level"].value_counts()

@@ -1,8 +1,4 @@
-"""Step 8b: Encoder sensitivity — same pipeline, alternative sentence encoders.
-
-Run:
-    python src/08b_encoder_sensitivity.py
-"""
+"""step 8b: encoder sensitivity"""
 
 from __future__ import annotations
 

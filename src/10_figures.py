@@ -1,12 +1,4 @@
-"""Step 10: regenerate thesis figures from files in out/.
-
-No model is refitted here. If an input file is missing, that figure is skipped
-with a warning so a partial run is still useful.
-
-Run:
-    python src/10_figures.py
-    python src/10_figures.py --lang en
-"""
+"""step 10: thesis figures"""
 
 from __future__ import annotations
 
@@ -115,10 +107,7 @@ def fig_residual_heatmap(lang: str, merlin: bool = False) -> None:
     topics = [int(c) for c in resid.columns]
     labels_map = _topic_labels(lang)
 
-    # interpreted labels can run to 80 characters. rotated, those consume so
-    # much vertical space that tight_layout collapses the axes into a thin
-    # strip and the figure becomes unreadable. truncate on a word boundary and
-    # size the canvas from the matrix shape plus a fixed allowance for labels.
+    # short labels and matrix-based canvas size
     def _short(s: str, n: int = 30) -> str:
         s = str(s)
         if len(s) <= n:
@@ -130,7 +119,7 @@ def fig_residual_heatmap(lang: str, merlin: bool = False) -> None:
 
     n_rows, n_cols = resid.shape
     width = min(13.0, max(8.5, 0.8 * n_cols + 3.0))
-    height = 0.42 * n_rows + 3.4          # 3.4in reserved for rotated labels
+    height = 0.42 * n_rows + 3.4          # rotated-label space
     vmax = max(3.0, float(np.nanmax(np.abs(resid.to_numpy()))))
     fig, ax = plt.subplots(figsize=(width, height))
     im = ax.imshow(resid.to_numpy(), cmap="RdBu_r", vmin=-vmax, vmax=vmax, aspect="auto")
@@ -150,9 +139,7 @@ def fig_residual_heatmap(lang: str, merlin: bool = False) -> None:
     cbar = fig.colorbar(im, ax=ax, fraction=0.030, pad=0.02)
     cbar.set_label("standardised residual", fontsize=9)
     cbar.ax.tick_params(labelsize=8)
-    # the "star marks |residual| > 3" legend belongs in the apa figure note
-    # below the figure, not inside the axes, where it collides with the first
-    # rotated tick label.
+    # significance note kept outside the axes
     out = RESULTS_DIR / (f"fig_residuals_merlin_{lang}" if merlin else f"fig_residuals_{lang}")
     savefig(fig, out)
 
@@ -326,7 +313,7 @@ def fig_topic_overlap(lang: str) -> None:
                      "surface features"]
     features = [f for f in feature_order if f in set(df["features"])]
     corpora = list(dict.fromkeys(df["corpus"]))
-    # put learner / reference next to each other when present.
+    # adjacent learner and reference bars
     preferred = [c for c in ["merlin_de", "elg_cefr_de", "icle500_en", "elg_cefr_en"]
                  if c in corpora]
     corpora = preferred + [c for c in corpora if c not in preferred]

@@ -1,32 +1,4 @@
-"""Step 7: does a topic-only model transfer between corpora?
-
-Lyngbaek and Kristensen-McLachlan (2026) find that their probes work well
-inside a corpus and collapse when tested on a different one. I run topic
-features through the same kind of evaluation to see whether topic behaves the
-same way.
-
-Two experiments:
-
-  A. Leave-one-corpus-out. Train on every corpus except one, test on the one
-     left out, and compare against in-corpus cross-validation on the diagonal.
-
-  B. Topic-grouped stress test. Re-partition the folds so no topic appears in
-     both training and test. Because this also changes class/corpus balance and
-     fold difficulty, the difference is descriptive rather than a causal
-     estimate of reliance on topic.
-
-Run:
-    python src/07_cross_corpus.py
-    python src/07_cross_corpus.py --lang en
-
-Writes cross_corpus_transfer_<lang>.csv, topic_stratified_<lang>.csv and
-cross_corpus_<lang>.json to out/.
-
-KeyNMF was fitted once to all unlabelled documents. A held-out corpus therefore
-helped define the shared topic basis, so the transfer results are transductive
-diagnostics rather than estimates for a genuinely unseen corpus. A fully
-inductive analysis would refit KeyNMF on the training corpora in each split.
-"""
+"""step 7: cross-corpus transfer and split stress test"""
 
 from __future__ import annotations
 
@@ -105,10 +77,7 @@ def main() -> None:
     corpora = sorted(df["dataset"].unique())
     out: dict = {"lang": lang, "n": int(len(df)), "corpora": corpora}
 
-    # every transfer cell must evaluate the same label space. previously each
-    # pair used whichever levels happened to overlap, so cells covered different
-    # subsets of the test corpora and could not be compared. keep only levels
-    # represented by at least one observation per fold in every corpus.
+    # common label space across transfer cells
     support = pd.crosstab(df["dataset"], df["cefr_level"]).reindex(
         index=corpora, columns=LEVEL_ORDER, fill_value=0)
     common_levels = [level for level in LEVEL_ORDER
@@ -130,9 +99,7 @@ def main() -> None:
     print(f"CROSS-CORPUS TRANSFER AND TOPIC-STRATIFIED SPLITS ({lang})")
     print("=" * 78)
 
-    # ==================================================================
     # a. leave-one-corpus-out and the full transfer matrix
-    # ==================================================================
     print("\n" + "=" * 78)
     print("A. TRANSFER: does a topic-only model trained on one corpus work on another?")
     print("=" * 78)
@@ -149,7 +116,7 @@ def main() -> None:
         for test_c in corpora:
             te = (df_transfer["dataset"] == test_c).to_numpy()
             if train_c == test_c:
-                # keep linked document families in one fold
+                # linked families kept together
                 sub_y = y_transfer[tr]
                 if len(sub_y) < N_SPLITS or len(np.unique(sub_y)) < 2:
                     continue
@@ -194,7 +161,7 @@ def main() -> None:
         print(line)
     print("\n* = in-corpus cross-validation. All other cells are transfer.")
 
-    # leave-one-corpus-out: train on everything else, test on the held-out corpus
+    # leave-one-corpus-out transfer
     print("\n--- Leave-one-corpus-out (train on all other corpora) ---")
     loco_rows = []
     for c in corpora:
@@ -204,7 +171,7 @@ def main() -> None:
         clf.fit(topic_transfer[tr], y_transfer[tr])
         m_out = metrics(y_transfer[te], clf.predict(topic_transfer[te]))
 
-        # in-corpus reference on the same subset
+        # matched in-corpus reference
         sub_y = y_transfer[te]
         m_in = None
         if len(sub_y) >= N_SPLITS and len(np.unique(sub_y)) >= 2:
@@ -214,7 +181,7 @@ def main() -> None:
             m_in = metrics(sub_y,
                            cross_val_predict(make_lr(), topic_transfer[te],
                                              sub_y, cv=cv, groups=groups))
-        # majority-class floor on the test corpus
+        # test-corpus majority floor
         floor = metrics(sub_y, np.full(len(sub_y),
                                        pd.Series(sub_y).value_counts().idxmax()))
         loco_rows.append({
@@ -250,9 +217,7 @@ def main() -> None:
         out["mean_in_corpus_weighted_f1"] = float(mean_in)
         out["mean_transfer_weighted_f1"] = float(mean_out)
 
-    # ==================================================================
     # b. topic-stratified splits
-    # ==================================================================
     print("\n" + "=" * 78)
     print("B. TOPIC-GROUPED STRESS TEST")
     print("=" * 78)
@@ -329,7 +294,7 @@ def main() -> None:
 
     if not args.skip_tfidf and stress_estimable:
         print("\n  Full-text TF-IDF stress test under the same two split regimes.")
-        # fit vocabulary and idf weights inside each training fold
+        # fold-specific vocabulary and idf
         Xtf = dfk["text"].astype(str).tolist()
         clf_tf = make_pipeline(
             TfidfVectorizer(max_features=50_000, min_df=3, sublinear_tf=True),
@@ -357,7 +322,7 @@ def main() -> None:
             "topic_grouped_qwk": m_g["qwk"],
             "floor_weighted_f1": floor["weighted_f1"],
         })
-        # report full-corpus vocabulary size only as a reference
+        # full-corpus vocabulary reference
         _vocab = TfidfVectorizer(max_features=50_000, min_df=3,
                                  sublinear_tf=True).fit(Xtf)
         print(f"\n  full text (TF-IDF), vocabulary {len(_vocab.vocabulary_):,} "

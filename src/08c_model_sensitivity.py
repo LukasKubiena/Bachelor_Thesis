@@ -1,8 +1,4 @@
-"""Step 8c: Alternative topic models as sensitivity checks (TF-IDF NMF, S3).
-
-Run:
-    python src/08c_model_sensitivity.py
-"""
+"""step 8c: topic-model sensitivity"""
 
 from __future__ import annotations
 
@@ -94,10 +90,7 @@ def main() -> None:
             lambda: s3.fit_transform(corpus),
             "S3 document-axis matrix",
         )
-        # s3/fastica produces signed semantic axes rather than non-negative
-        # topic memberships. the dominant axis is therefore the loading with
-        # greatest magnitude; signed argmax systematically ignores strong
-        # negative projections and is not a meaningful hard assignment.
+        # magnitude-based assignment for signed s3 axes
         dominant_axis = np.abs(doc_topic_s3).argmax(1)
         row = {
             "model": "S3 (dominant absolute axis)",

@@ -1,4 +1,4 @@
-"""Near-duplicate audit across corpora (char n-gram TF-IDF cosine)."""
+"""near-duplicate and grouping utilities"""
 
 from __future__ import annotations
 
@@ -12,13 +12,7 @@ def merged_validation_groups(
     df: pd.DataFrame,
     near_pairs: pd.DataFrame | None = None,
 ) -> pd.Series:
-    """Return leakage-safe groups spanning parallel and near-duplicate texts.
-
-    ``pair_id`` links known versions of the same source article. The
-    near-duplicate audit can reveal additional copies whose source metadata do
-    not link them. Cross-validation must keep the transitive closure of both
-    relations in one fold. Rows are retained; only the grouping changes.
-    """
+    """return leakage-safe groups spanning parallel and near-duplicate texts"""
     n = len(df)
     parent = np.arange(n, dtype=int)
 
@@ -63,7 +57,7 @@ def topic_linked_components(
     topics,
     validation_groups,
 ) -> tuple[np.ndarray, int, int]:
-    """Merge dominant-topic groups linked by a validation family."""
+    """merge dominant-topic groups linked by a validation family"""
     frame = pd.DataFrame({
         "topic": np.asarray(topics, dtype=int),
         "validation_group": np.asarray(validation_groups).astype(str),
@@ -102,12 +96,7 @@ def near_duplicate_report(
     threshold: float = 0.85,
     top_k: int = 20,
 ) -> pd.DataFrame:
-    """Cosine similarity over char 3-5 gram TF-IDF.
-
-    Returns pairs above threshold with source corpora so cross-corpus overlap
-    is visible. Within-corpus parallel pairs are expected; cross-corpus pairs
-    of non-trivial size are a problem.
-    """
+    """cosine similarity over char 3-5 gram tf-idf"""
     texts = df[text_col].astype(str).tolist()
     X = TfidfVectorizer(
         analyzer="char_wb",
@@ -154,12 +143,7 @@ def bipartite_max_similarity(
     text_col: str = "text",
     chunk: int = 200,
 ) -> pd.DataFrame:
-    """For every document in dataset_a, the nearest neighbour in dataset_b.
-
-    Complements the global kNN audit: a cross-corpus pair can sit below the
-    top-k within-corpus neighbours and be missed. This computes the full
-    bipartite cosine and cannot hide that way.
-    """
+    """for every document in dataset_a, the nearest neighbour in dataset_b"""
     from sklearn.metrics.pairwise import cosine_similarity
 
     a_mask = df["dataset"] == dataset_a

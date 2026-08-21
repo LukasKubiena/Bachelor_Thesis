@@ -1,14 +1,4 @@
-"""Step 1b: Descriptive statistics table for the thesis (Table 1).
-
-Per corpus and per CEFR level: n, token length stats, sentences, TTR on a
-fixed 200-token window, mean word length. Also Spearman rho of length vs
-ordinal CEFR rank with a bootstrap CI — the evidence for the length claim
-from the data itself, not a citation.
-
-Run:
-    python src/01b_descriptives.py
-    python src/01b_descriptives.py --lang en
-"""
+"""step 1b: corpus descriptives"""
 
 from __future__ import annotations
 
@@ -45,7 +35,7 @@ def mean_word_len(text: str) -> float:
 
 
 def windowed_ttr(text: str, window: int = 200) -> float:
-    """Type-token ratio on the first `window` tokens (length-unconfounded)."""
+    """type-token ratio on the first `window` tokens (length-unconfounded)"""
     tokens = str(text).lower().split()[:window]
     if len(tokens) < 20:
         return float("nan")
@@ -91,8 +81,7 @@ def main() -> None:
     p = paths(args.lang)
     lang = args.lang
 
-    # step 1b runs before the topic model. always read the table just produced
-    # by step 1; an older with-topics file may still exist from a prior run.
+    # clean step 1 input only
     src = p["combined_csv"]
     if not src.exists():
         sys.exit(f"Run src/01_load_data.py --lang {lang} first.")
@@ -151,7 +140,7 @@ def main() -> None:
     fig.suptitle(f"Document length by CEFR level ({lang})")
     savefig(fig, RESULTS_DIR / f"fig_length_by_level_{lang}")
 
-    # markdown table for quick paste
+    # paste-ready markdown
     md = out[out["cefr_level"] == "ALL"][
         ["dataset", "n", "tokens_median", "tokens_iqr", "sentences_median", "ttr_200_mean", "mean_word_len"]
     ].to_markdown(index=False, floatfmt=".2f")
